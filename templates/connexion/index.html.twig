@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{# ... #}
+
+{% block body %}
+    <div class="row">
+                <div class="col-12">
+                        {{ form_label(form.login) }}
+                        {{ form_widget(form.login) }}
+                </div>
+                <div class="col-12">
+                        {{ form_label(form.password) }}
+                        {{ form_widget(form.password) }}
+                </div>
+        </div>
+        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+{% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FraisForfaitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FraisForfaitRepository::class)]
