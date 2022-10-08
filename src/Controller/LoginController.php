@@ -18,7 +18,7 @@ class LoginController extends AbstractController
       
     public function comptable(): Response 
     {
-        return $this->render('login/login.html.twig', [
+        return $this->render('login/comptable.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }

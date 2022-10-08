@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block stylesheets %}
     <link href="{{ asset('css/login.css') }}" type="text/css" rel="stylesheet">
@@ -8,10 +8,10 @@
 
 {% block body %}
 {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+    <div class="mb-3">
+        Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+    </div>
+{% endif %}
 <div class="box">
     <form method="post">
         <div class="login-box">

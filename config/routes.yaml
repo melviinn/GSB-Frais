@@ -10,3 +10,6 @@ app_comptable:
     path: /comptable
     controller: App\Controller\LoginController::comptable
 
+app_home:
+    path: /home
+    controller: App\Controller\AccueilController::index
