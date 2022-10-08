@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/visiteur')]
 class VisiteurController extends AbstractController
 {
-    #[Route('/', name: 'app_visiteur_index', methods: ['GET'])]
+    #[Route('/index', name: 'app_visiteur_index', methods: ['GET'])]
     public function index(VisiteurRepository $visiteurRepository): Response
     {
         return $this->render('visiteur/index.html.twig', [

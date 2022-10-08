@@ -1,36 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
-
-{% block stylesheets %}
-    <link href="{{ asset('css/login.css') }}" type="text/css" rel="stylesheet">
-{% endblock %}
+{% block title %}Hello AccueilController!{% endblock %}
 
 {% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-<div class="box">
-    <form method="post">
-        <div class="login-box">
-            <div class="form-login">
-                <h2 class="h3 mb-3 font-weight-normal">Connectez vous en tant que Visiteur</h2>
-                <div class="input-box">
-                    <input type="text" name="login" id="inputLogin" class="form-control" required>
-                    <span>Login</span>
-                    <i></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-                    <span>Mot de passe</span>
-                    <i></i>
-                </div>
-                <div class="links">
-                    <a href="{{ path('app_comptable') }}">Vous êtes Comptable ?</a>
-                </div>
-                <input type="hidden" name="_target_path" value="/visiteur/">
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-                <button class="btn btn-lg btn-primary" type="submit">Connexion</button>
-            </div>
-        </div>
-    </form>
-</box>
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/melvin/GSB-Frais/GSB-Frais/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/melvin/GSB-Frais/GSB-Frais/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
+    </ul>
+</div>
 {% endblock %}
