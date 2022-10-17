@@ -13,3 +13,7 @@ app_comptable:
 app_home:
     path: /home
     controller: App\Controller\AccueilController::index
+
+app_logout:
+    path: /logout
+    controller: App\Controller\LoginController::logout

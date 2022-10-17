@@ -22,4 +22,9 @@ class LoginController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    public function logout(): void
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
 }
