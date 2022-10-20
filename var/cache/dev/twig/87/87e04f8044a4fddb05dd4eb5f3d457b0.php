@@ -109,19 +109,6 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 10
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
-            // line 11
-            echo "    <div class=\"mb-3\">
-        Vous êtes connecté en tant que ";
-            // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "userIdentifier", [], "any", false, false, false, 12), "html", null, true);
-            echo ", <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Déconnexion</a>
-    </div>
-";
-        }
-        // line 15
         echo "<div class=\"box\">
     <form method=\"post\">
         <div class=\"login-box\">
@@ -139,13 +126,13 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
                 </div>
                 <div class=\"links\">
                     <a href=\"";
-        // line 31
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comptable");
         echo "\">Vous êtes Comptable ?</a>
                 </div>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 34
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                 <button class=\"btn btn-lg btn-primary\" type=\"submit\">Connexion</button>
@@ -174,7 +161,7 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 34,  143 => 31,  125 => 15,  117 => 12,  114 => 11,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  136 => 29,  130 => 26,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -188,11 +175,6 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
 {% endblock %}
 
 {% block body %}
-{% if app.user %}
-    <div class=\"mb-3\">
-        Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Déconnexion</a>
-    </div>
-{% endif %}
 <div class=\"box\">
     <form method=\"post\">
         <div class=\"login-box\">
@@ -219,6 +201,6 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
     </form>
 </box>
 {% endblock %}
-", "login/visiteur.html.twig", "/Users/melvin/Desktop/TEST/GSB-Frais/templates/login/visiteur.html.twig");
+", "login/visiteur.html.twig", "/Users/melvin/Desktop/SLAM/GSB-Frais/templates/login/visiteur.html.twig");
     }
 }

@@ -20,6 +20,14 @@ class FraisForfait
     #[ORM\Column(length: 10)]
     private ?string $montant = null;
 
+    #[ORM\OneToMany(mappedBy: 'idFraisForfait', targetEntity: LigneFraisForfait::class)]
+    private Collection $ligneFraisForfaits;
+
+    public function __construct()
+    {
+        $this->ligneFraisForfaits = new ArrayCollection();
+    }
+
     public function getId(): ?string
     {
         return $this->id;
@@ -52,6 +60,36 @@ class FraisForfait
     public function setMontant(string $montant): self
     {
         $this->montant = $montant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, LigneFraisForfait>
+     */
+    public function getLigneFraisForfaits(): Collection
+    {
+        return $this->ligneFraisForfaits;
+    }
+
+    public function addLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    {
+        if (!$this->ligneFraisForfaits->contains($ligneFraisForfait)) {
+            $this->ligneFraisForfaits->add($ligneFraisForfait);
+            $ligneFraisForfait->setIdFraisForfait($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    {
+        if ($this->ligneFraisForfaits->removeElement($ligneFraisForfait)) {
+            // set the owning side to null (unless already changed)
+            if ($ligneFraisForfait->getIdFraisForfait() === $this) {
+                $ligneFraisForfait->setIdFraisForfait(null);
+            }
+        }
 
         return $this;
     }

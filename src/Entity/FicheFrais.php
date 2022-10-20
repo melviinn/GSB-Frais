@@ -11,11 +11,15 @@ use Doctrine\ORM\Mapping as ORM;
 class FicheFrais
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 6)]
+    #[ORM\ManyToOne(inversedBy: 'ficheFraisIdVisiteur')]
+    #[ORM\Id]
+    private ?User $idVisiteur = null;
+
+    #[ORM\Column]
+    #[ORM\Id]
     private ?string $mois = null;
 
     #[ORM\Column]
@@ -26,6 +30,21 @@ class FicheFrais
 
     #[ORM\Column(length: 10)]
     private ?string $dateModif = null;
+
+    #[ORM\ManyToOne(inversedBy: 'ficheFrais')]
+    private ?Etat $idEtat = null;
+
+    #[ORM\OneToMany(mappedBy: 'mois', targetEntity: LigneFraisForfait::class)]
+    private Collection $ligneFraisForfaits;
+
+    #[ORM\OneToMany(mappedBy: 'mois', targetEntity: LigneFraisHorsForfait::class)]
+    private Collection $ligneFraisHorsForfaits;
+
+    public function __construct()
+    {
+        $this->ligneFraisForfaits = new ArrayCollection();
+        $this->ligneFraisHorsForfaits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -64,6 +83,102 @@ class FicheFrais
     public function setDateModif(string $dateModif): self
     {
         $this->dateModif = $dateModif;
+
+        return $this;
+    }
+
+    public function getMois(): ?string
+    {
+        return $this->mois;
+    }
+
+    public function setMois(string $mois): self
+    {
+        $this->mois = $mois;
+
+        return $this;
+    }
+
+    public function getIdVisiteur(): ?User
+    {
+        return $this->idVisiteur;
+    }
+
+    public function setIdVisiteur(?User $idVisiteur): self
+    {
+        $this->idVisiteur = $idVisiteur;
+
+        return $this;
+    }
+
+    public function getIdEtat(): ?Etat
+    {
+        return $this->idEtat;
+    }
+
+    public function setIdEtat(?Etat $idEtat): self
+    {
+        $this->idEtat = $idEtat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, LigneFraisForfait>
+     */
+    public function getLigneFraisForfaits(): Collection
+    {
+        return $this->ligneFraisForfaits;
+    }
+
+    public function addLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    {
+        if (!$this->ligneFraisForfaits->contains($ligneFraisForfait)) {
+            $this->ligneFraisForfaits->add($ligneFraisForfait);
+            $ligneFraisForfait->setMois($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    {
+        if ($this->ligneFraisForfaits->removeElement($ligneFraisForfait)) {
+            // set the owning side to null (unless already changed)
+            if ($ligneFraisForfait->getMois() === $this) {
+                $ligneFraisForfait->setMois(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, LigneFraisHorsForfait>
+     */
+    public function getLigneFraisHorsForfaits(): Collection
+    {
+        return $this->ligneFraisHorsForfaits;
+    }
+
+    public function addLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
+    {
+        if (!$this->ligneFraisHorsForfaits->contains($ligneFraisHorsForfait)) {
+            $this->ligneFraisHorsForfaits->add($ligneFraisHorsForfait);
+            $ligneFraisHorsForfait->setMois($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
+    {
+        if ($this->ligneFraisHorsForfaits->removeElement($ligneFraisHorsForfait)) {
+            // set the owning side to null (unless already changed)
+            if ($ligneFraisHorsForfait->getMois() === $this) {
+                $ligneFraisHorsForfait->setMois(null);
+            }
+        }
 
         return $this;
     }

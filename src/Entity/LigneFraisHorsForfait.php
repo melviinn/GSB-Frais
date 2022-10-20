@@ -22,6 +22,12 @@ class LigneFraisHorsForfait
     #[ORM\Column(length: 15)]
     private ?string $montant = null;
 
+    #[ORM\ManyToOne(inversedBy: 'ligneFraisHorsForfaits')]
+    private ?User $idVisiteur = null;
+
+    #[ORM\ManyToOne(inversedBy: 'ligneFraisHorsForfaits')]
+    private ?FicheFrais $mois = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +65,30 @@ class LigneFraisHorsForfait
     public function setMontant(string $montant): self
     {
         $this->montant = $montant;
+
+        return $this;
+    }
+
+    public function getIdVisiteur(): ?User
+    {
+        return $this->idVisiteur;
+    }
+
+    public function setIdVisiteur(?User $idVisiteur): self
+    {
+        $this->idVisiteur = $idVisiteur;
+
+        return $this;
+    }
+
+    public function getMois(): ?FicheFrais
+    {
+        return $this->mois;
+    }
+
+    public function setMois(?FicheFrais $mois): self
+    {
+        $this->mois = $mois;
 
         return $this;
     }

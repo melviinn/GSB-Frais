@@ -17,6 +17,14 @@ class Etat
     #[ORM\Column(length: 30, nullable: true)]
     private ?string $libelle = null;
 
+    #[ORM\OneToMany(mappedBy: 'idEtat', targetEntity: FicheFrais::class)]
+    private Collection $ficheFrais;
+
+    public function __construct()
+    {
+        $this->ficheFrais = new ArrayCollection();
+    }
+
     public function getId(): ?string
     {
         return $this->id;
@@ -40,4 +48,35 @@ class Etat
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, FicheFrais>
+     */
+    public function getFicheFrais(): Collection
+    {
+        return $this->ficheFrais;
+    }
+
+    public function addFicheFrai(FicheFrais $ficheFrai): self
+    {
+        if (!$this->ficheFrais->contains($ficheFrai)) {
+            $this->ficheFrais->add($ficheFrai);
+            $ficheFrai->setIdEtat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFicheFrai(FicheFrais $ficheFrai): self
+    {
+        if ($this->ficheFrais->removeElement($ficheFrai)) {
+            // set the owning side to null (unless already changed)
+            if ($ficheFrai->getIdEtat() === $this) {
+                $ficheFrai->setIdEtat(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

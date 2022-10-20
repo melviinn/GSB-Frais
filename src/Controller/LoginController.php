@@ -9,18 +9,15 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    public function visiteur(): Response 
+    public function visiteur(AuthenticationUtils $authenticationUtils): Response 
     {
-        return $this->render('login/visiteur.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        return $this->render('login/visiteur.html.twig');
     }
       
-    public function comptable(): Response 
+    public function comptable(AuthenticationUtils $authenticationUtils): Response 
     {
-        return $this->render('login/comptable.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        
+        return $this->render('login/comptable.html.twig');
     }
 
     public function logout(): void

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FicheFraisController!{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+        {{ form_row(form.nbJustificatifs) }}
+        {{ form_row(form.mois) }}
+        {{ form_row(form.montantValide) }}
+        {{ form_row(form.dateModif) }}
+
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(form) }}
+{% endblock %}
