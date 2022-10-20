@@ -1671,6 +1671,6 @@ class __TwigTemplate_27b46224575cfc1d126417ff68469eeb extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/melvin/Desktop/TEST/GSB-Frais/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/developpeur/GSB-Frais/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

@@ -445,6 +445,6 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
 
 {% endblock %}
-", "accueil/index.html.twig", "/Users/melvin/Desktop/SLAM/GSB-Frais/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/home/developpeur/GSB-Frais/templates/accueil/index.html.twig");
     }
 }

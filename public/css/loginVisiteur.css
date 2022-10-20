@@ -12,14 +12,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(224, 216, 216);
+    background: rgb(218, 235, 240);
 }
 
 .login-box {
     position: relative;
     width: 380px;
     height: 420px;
-    background: rgb(210, 204, 204);
+    background: rgb(218, 235, 240);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 5px 5px 15px 5px #8f8f8f;
@@ -65,7 +65,7 @@
     position: absolute;
     inset: 2px;
     border-radius: 8px;
-    background: rgb(210, 204, 204);
+    background: rgb(218, 235, 240);
     z-index: 10;
     padding: 30px 40px;
     display: flex;
