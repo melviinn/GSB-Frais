@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\FicheFrais;
 use App\Form\FicheFraisType;
+use App\Form\RenseignerFicheFraisFormType;
 use App\Repository\FicheFraisRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +18,7 @@ class FicheFraisController extends AbstractController
     public function renseigner(Request $request, FicheFraisRepository $ficheFraisRepository, EntityManagerInterface $entityManager): Response
     {
         $ficheFrais = new FicheFrais();
-        $form = $this->createForm(FicheFraisType::class, $ficheFrais);
+        $form = $this->createForm(RenseignerFicheFraisFormType::class, $ficheFrais);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

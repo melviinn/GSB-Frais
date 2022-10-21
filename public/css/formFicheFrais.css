@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro';
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+.form-login h2 {
+    color: #459fff;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: #459fff;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+
+

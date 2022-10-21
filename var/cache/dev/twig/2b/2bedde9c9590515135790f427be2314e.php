@@ -155,7 +155,10 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
+                <a class=\"nav-link\" href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_fiche_frais");
+        echo "\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
                 </a>
@@ -295,7 +298,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
     public function getDebugInfo()
     {
-        return array (  269 => 138,  265 => 137,  261 => 136,  256 => 134,  248 => 129,  215 => 99,  186 => 73,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  272 => 138,  268 => 137,  264 => 136,  259 => 134,  251 => 129,  218 => 99,  189 => 73,  160 => 47,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -346,7 +349,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
+                <a class=\"nav-link\" href=\"{{ path('app_fiche_frais') }}\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
                 </a>
@@ -445,6 +448,6 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
 
 {% endblock %}
-", "accueil/index.html.twig", "/Users/melvin/Desktop/SLAM/GSB-Frais/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/home/developpeur/GSB-Frais/templates/accueil/index.html.twig");
     }
 }

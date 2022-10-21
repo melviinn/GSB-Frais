@@ -18,7 +18,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?string $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
     private ?string $login = null;
@@ -67,9 +67,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->ligneFraisHorsForfaits = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getLogin(): ?string
@@ -221,7 +228,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->ficheFrais->contains($ficheFraisIdVisiteur)) {
             $this->ficheFrais->add($ficheFraisIdVisiteur);
-            $ficheFraisIdVisiteur->setMois($this);
+            $ficheFraisIdVisiteur->setIdVisiteur($this);
         }
 
         return $this;

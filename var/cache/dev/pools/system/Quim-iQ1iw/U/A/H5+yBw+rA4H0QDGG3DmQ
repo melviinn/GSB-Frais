@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CFicheFrais%2523getIdEtat
+
+return [PHP_INT_MAX, []];
