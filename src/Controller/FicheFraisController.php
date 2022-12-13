@@ -40,14 +40,13 @@ class FicheFraisController extends AbstractController
         $user = $this->getUser();
         
 
-        $form = $this->createForm(LigneFraisForfaitType::class, ['FraisForfait' => $fraisForfait, 'HorsClass' => $ficheFrais] );
+        $form = $this->createForm(LigneFraisForfaitType::class, ['FraisForfait' => $fraisForfait] );
         $form->handleRequest($request);
 
         
         if ($form->isSubmitted() && $form->isValid()) {
 
             $moisData = $form->get('mois')->getData();
-            $fraisForfaitData = $form->get('FraisForfait')->getData();
             $nbJustData = $form->get('nbJustificatifs')->getData();
             $montantTotalData = $form->get('montantValide')->getData();
 
@@ -55,48 +54,32 @@ class FicheFraisController extends AbstractController
             $ficheFrais->setMois($moisData);
             $ficheFrais->setIdEtat($etatRepository->findOneBy(['id' => 'CR']));
             if ($nbJustData == null and $montantTotalData == null){
-                
+
             } else {
                 $ficheFrais->setNbJustificatifs($nbJustData);
                 $ficheFrais->setMontantValide($montantTotalData);
             }
             
-
             $entityManager->persist($ficheFrais);
             $entityManager->flush();
             
-            return $this->redirectToRoute('app_frais_forfait', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_visu_frais', [], Response::HTTP_SEE_OTHER);
         }
 
         $ligneFraisHorsForfait = new LigneFraisHorsForfait();
-        $ligneFraisHorsForfait->setIdVisiteur($user);
+        
         $form2 = $this->createForm(FraisHorsForfaitType::class, $ligneFraisHorsForfait);
         $form2->handleRequest($request);
 
         if ($form2->isSubmitted() && $form2->isValid()) {
+
+            $ligneFraisHorsForfait->setIdVisiteur($user);
                         
             $entityManager->persist($ligneFraisHorsForfait);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_visu_frais', [], Response::HTTP_SEE_OTHER);
         }
-
-        $form3 = $this->createForm(HorsClassType::class, $ficheFrais);
-        $form3->handleRequest($request);
-
-        if ($form3->isSubmitted() && $form3->isValid()) {
-                        
-            $nbJustData = $form3->get('nbJustificatifs')->getData();
-            
-
-            $entityManager->persist($ligneFraisHorsForfait);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_visu_frais', [], Response::HTTP_SEE_OTHER);
-        }
-
-
-        
 
         return $this->render('fiche_frais/renseigner.html.twig', [
             'form' => $form->createView(),
@@ -113,7 +96,7 @@ class FicheFraisController extends AbstractController
         return $this->render('fiche_frais/visualiser.html.twig', [
             'hors_forfait' => $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $userId]),
             'frais_forfait' => $fraisForfaitRepository->findAll(),
-            'hors_class' => $ficheFraisRepository->findAll(),
+            'hors_class' => $ficheFraisRepository->findBy(['idVisiteur' => $userId]),
         ]);
     }
 }

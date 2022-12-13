@@ -333,9 +333,6 @@
     <service id="App\Form\FraisHorsForfaitType" class="App\Form\FraisHorsForfaitType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\HorsClassType" class="App\Form\HorsClassType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\LigneFraisForfaitType" class="App\Form\LigneFraisForfaitType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -936,7 +933,6 @@
         <argument>App\Form\FraisForfaitAllType</argument>
         <argument>App\Form\FraisForfaitType</argument>
         <argument>App\Form\FraisHorsForfaitType</argument>
-        <argument>App\Form\HorsClassType</argument>
         <argument>App\Form\LigneFraisForfaitType</argument>
         <argument>App\Form\LoginFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -2054,7 +2050,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.tikVM8T"/>
+      <argument type="service" id=".service_locator.VQUdaIi"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4367,8 +4363,6 @@
     <service id=".abstract.instanceof.App\Form\FraisForfaitType" class="App\Form\FraisForfaitType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FraisHorsForfaitType" class="App\Form\FraisHorsForfaitType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FraisHorsForfaitType" class="App\Form\FraisHorsForfaitType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HorsClassType" class="App\Form\HorsClassType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\HorsClassType" class="App\Form\HorsClassType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LigneFraisForfaitType" class="App\Form\LigneFraisForfaitType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LigneFraisForfaitType" class="App\Form\LigneFraisForfaitType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LoginFormType" class="App\Form\LoginFormType" autowire="true" abstract="true"/>
@@ -4899,14 +4893,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.tikVM8T" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VQUdaIi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\FicheFraisType" type="service_closure" id="App\Form\FicheFraisType"/>
         <argument key="App\Form\FraisForfaitAllType" type="service_closure" id="App\Form\FraisForfaitAllType"/>
         <argument key="App\Form\FraisForfaitType" type="service_closure" id="App\Form\FraisForfaitType"/>
         <argument key="App\Form\FraisHorsForfaitType" type="service_closure" id="App\Form\FraisHorsForfaitType"/>
-        <argument key="App\Form\HorsClassType" type="service_closure" id="App\Form\HorsClassType"/>
         <argument key="App\Form\LigneFraisForfaitType" type="service_closure" id="App\Form\LigneFraisForfaitType"/>
         <argument key="App\Form\LoginFormType" type="service_closure" id="App\Form\LoginFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
@@ -5954,7 +5947,7 @@
     <service id=".service_locator.IJyWPwb" alias=".service_locator.kXtg5m1"/>
     <service id=".service_locator.IaG8Qg8" alias=".service_locator.z1pbfDW"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.CsYqONc" alias=".service_locator.tikVM8T"/>
+    <service id=".service_locator.mDMSZ9m" alias=".service_locator.VQUdaIi"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
     <service id=".service_locator._eRAkJb" alias=".service_locator.jIxfAsi"/>
     <service id="validator" alias="debug.validator"/>

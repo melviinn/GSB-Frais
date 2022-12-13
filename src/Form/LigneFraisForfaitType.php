@@ -60,7 +60,7 @@ class LigneFraisForfaitType extends AbstractType
                 'attr' => [
                     'class' => 'form-control mb-2',
                 ],
-                'label' => 'Montant total', 
+                'label' => 'Montant total (€)', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

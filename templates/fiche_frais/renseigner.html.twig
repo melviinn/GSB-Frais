@@ -97,54 +97,58 @@
                 </nav>
                 <!-- Fin de la Topbar -->
                 <div class="container-fluid">
-                    <form method="post">
-                        <div class="login-box">
-                            <div class="form-login">
-                                {{ form_start(form) }}
-                                    <div class="row">
-                                        <div class="col">
-                                            {{ form_row(form.mois) }}
-                                        </div>
-                                    </div>
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Frais au Forfait</h6>
-                                        </div>
-                                        <div class="card-body py-1 mb-2">
+                    <div class="card shadow mb-4">
+                        <div class="card-body py-1 mb-2">
+                            <form method="post">
+                                <div class="login-box">
+                                    <div class="form-login">
+                                        {{ form_start(form) }}
                                             <div class="row">
                                                 <div class="col">
-                                                    {{ form_row(form.FraisForfait)}}
+                                                    {{ form_row(form.mois) }}
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                            
-                                    <div class="card shadow mb-1">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Hors Classification</h6>
-                                        </div>
-                                        <div class="card-body py-1 mb-2">
-                                            <div class="row">
-                                                <div class="col">
-                                                    {{ form_row(form.nbJustificatifs)}}
-                                                    {{ form_row(form.montantValide)}}
+                                            <div class="card shadow mb-4">
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-primary">Frais au Forfait</h6>
+                                                </div>
+                                                <div class="card-body py-1 mb-2">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            {{ form_row(form.FraisForfait)}}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                    
+                                            <div class="card shadow mb-1">
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-primary">Hors Classification</h6>
+                                                </div>
+                                                <div class="card-body py-1 mb-2">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            {{ form_row(form.nbJustificatifs)}}
+                                                            {{ form_row(form.montantValide)}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-lg btn-primary mb-4">Créer</button>     
+                                                
+                                        {{ form_end(form) }} 
                                     </div>
-                                    <button type="submit" class="btn btn-lg btn-primary mb-4">Créer</button>     
-                                        
-                                {{ form_end(form) }} 
-                            </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-
+                    </div>
+                    
                     <div class="card shadow mb-1">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Hors Forfait</h6>
                         </div>
-                        <div class="card-body py-1 mb-2">   
-                            <form method="post">
+                        <div class="card-body py-1">  
+                            <form method="post"> 
                                 <div class="login-box">
                                     <div class="form-login mb-4">
                                         {{ form_start(form2) }}
@@ -161,14 +165,13 @@
                                                     {{ form_row(form2.montant) }}
                                                 </div>
                                             </div>
-                                        
+                                            <button type="submit" class="btn btn-lg btn-primary">Créer</button>
+                                        {{ form_end(form2) }} 
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </div>    
-                    <button type="submit" class="btn btn-lg btn-primary mb-3">Créer</button>
-                    {{ form_end(form2) }}
+                    </div>                       
                 </div>                    
             </div>
         </div>

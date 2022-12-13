@@ -44,7 +44,7 @@ class FraisHorsForfaitType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Montant', 
+                'label' => 'Montant (€)', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
