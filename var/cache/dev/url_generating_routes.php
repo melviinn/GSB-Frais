@@ -16,7 +16,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'app_fiche_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::renseigner'], [], [['text', '/fiche/frais']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_visiteur_index' => [[], ['_controller' => 'App\\Controller\\VisiteurController::index'], [], [['text', '/visiteur/index']], [], [], []],
@@ -28,4 +27,7 @@ return [
     'app_comptable' => [[], ['_controller' => 'App\\Controller\\LoginController::comptable'], [], [['text', '/comptable']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\AccueilController::index'], [], [['text', '/home']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
+    'app_frais_forfait' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::renseigner'], [], [['text', '/frais/forfait']], [], [], []],
+    'app_frais_hors_forfait' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::renseignerHorsForfait'], [], [['text', '/frais/hors/forfait']], [], [], []],
+    'app_visu_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::visualiser'], [], [['text', '/fiche/frais/visualiser']], [], [], []],
 ];

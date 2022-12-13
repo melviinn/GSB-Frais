@@ -97,6 +97,6 @@ class __TwigTemplate_6de8bbe2fd2ac55f0e67c55040612ba6 extends Template
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Users/melvin/Desktop/TEST/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

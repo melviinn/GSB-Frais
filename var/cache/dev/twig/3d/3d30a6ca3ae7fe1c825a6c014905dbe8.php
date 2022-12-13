@@ -168,6 +168,6 @@ class __TwigTemplate_b9c6d8d252184eae127cec8b8555d051 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/home/developpeur/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }

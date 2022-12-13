@@ -20,6 +20,7 @@ use Doctrine\DBAL\Sharding\PoolingShardConnection;
 use Doctrine\DBAL\Sharding\PoolingShardManager;
 use Doctrine\DBAL\Tools\Console\Command\ImportCommand;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Id\AbstractIdGenerator;
 use Doctrine\ORM\Proxy\Autoloader;
@@ -28,6 +29,9 @@ use Doctrine\ORM\Tools\Console\Command\EnsureProductionSettingsCommand;
 use Doctrine\ORM\Tools\Export\ClassMetadataExporter;
 use Doctrine\ORM\UnitOfWork;
 use LogicException;
+use ReflectionMethod;
+use Symfony\Bridge\Doctrine\ArgumentResolver\EntityValueResolver;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension;
 use Symfony\Bridge\Doctrine\IdGenerator\UlidGenerator;
 use Symfony\Bridge\Doctrine\IdGenerator\UuidGenerator;
@@ -50,6 +54,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Messenger\Bridge\Doctrine\Transport\DoctrineTransportFactory;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -493,6 +498,11 @@ class DoctrineExtension extends AbstractDoctrineExtension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('orm.xml');
 
+        if (! (new ReflectionMethod(EntityManager::class, '__construct'))->isPublic()) {
+            $container->getDefinition('doctrine.orm.entity_manager.abstract')
+                ->setFactory(['%doctrine.orm.entity_manager.class%', 'create']);
+        }
+
         if (class_exists(AbstractType::class)) {
             $container->getDefinition('form.type.entity')->addTag('kernel.reset', ['method' => 'reset']);
         }
@@ -518,6 +528,44 @@ class DoctrineExtension extends AbstractDoctrineExtension
 
         if (! class_exists(UuidGenerator::class)) {
             $container->removeDefinition('doctrine.uuid_generator');
+        }
+
+        // available in Symfony 6.2 and higher
+        if (! class_exists(EntityValueResolver::class)) {
+            $container->removeDefinition('doctrine.orm.entity_value_resolver');
+            $container->removeDefinition('doctrine.orm.entity_value_resolver.expression_language');
+        } else {
+            if (! class_exists(ExpressionLanguage::class)) {
+                $container->removeDefinition('doctrine.orm.entity_value_resolver.expression_language');
+            }
+
+            $controllerResolverDefaults = [];
+
+            if (! $config['controller_resolver']['enabled']) {
+                $controllerResolverDefaults['disabled'] = true;
+            }
+
+            if (! $config['controller_resolver']['auto_mapping']) {
+                $controllerResolverDefaults['mapping'] = [];
+            }
+
+            if ($config['controller_resolver']['evict_cache']) {
+                $controllerResolverDefaults['evict_cache'] = true;
+            }
+
+            if ($controllerResolverDefaults) {
+                $container->getDefinition('doctrine.orm.entity_value_resolver')->setArgument(2, (new Definition(MapEntity::class))->setArguments([
+                    null,
+                    null,
+                    null,
+                    $controllerResolverDefaults['mapping'] ?? null,
+                    null,
+                    null,
+                    null,
+                    $controllerResolverDefaults['evict_cache'] ?? null,
+                    $controllerResolverDefaults['disabled'] ?? false,
+                ]));
+            }
         }
 
         // not available in Doctrine ORM 3.0 and higher

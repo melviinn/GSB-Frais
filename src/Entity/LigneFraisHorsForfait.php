@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\LigneFraisHorsForfaitRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 #[ORM\Entity(repositoryClass: LigneFraisHorsForfaitRepository::class)]
 class LigneFraisHorsForfait
@@ -20,13 +22,10 @@ class LigneFraisHorsForfait
     private ?string $date = null;
 
     #[ORM\Column(length: 15)]
-    private ?string $montant = null;
+    private ?int $montant = null;
 
     #[ORM\ManyToOne(inversedBy: 'ligneFraisHorsForfaits')]
     private ?User $idVisiteur = null;
-
-    #[ORM\ManyToOne(inversedBy: 'ligneFraisHorsForfaits')]
-    private ?FicheFrais $mois = null;
 
     public function getId(): ?int
     {
@@ -57,12 +56,12 @@ class LigneFraisHorsForfait
         return $this;
     }
 
-    public function getMontant(): ?string
+    public function getMontant(): ?int
     {
         return $this->montant;
     }
 
-    public function setMontant(string $montant): self
+    public function setMontant(int $montant): self
     {
         $this->montant = $montant;
 
@@ -81,12 +80,12 @@ class LigneFraisHorsForfait
         return $this;
     }
 
-    public function getMois(): ?FicheFrais
+    public function getMois(): ?string
     {
         return $this->mois;
     }
 
-    public function setMois(?FicheFrais $mois): self
+    public function setMois(?string $mois): self
     {
         $this->mois = $mois;
 

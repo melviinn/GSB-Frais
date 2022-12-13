@@ -93,7 +93,7 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">
     <link href=\"";
         // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sb-admin-2.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sb-admin-2.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
     <link href=\"";
         // line 10
@@ -254,30 +254,44 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
         echo "
                                         </div>
                                     </div>
-                                    ";
-        // line 128
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 128, $this->source); })()), "mois", [], "any", false, false, false, 128), 'row');
-        echo "
-                                    ";
-        // line 129
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 129, $this->source); })()), "nbJustificatifs", [], "any", false, false, false, 129), 'row');
-        echo "
-                                    ";
+                                    <div class=\"row\">
+                                        <div class=\"col\">
+                                            ";
         // line 130
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 130, $this->source); })()), "montantValide", [], "any", false, false, false, 130), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 130, $this->source); })()), "mois", [], "any", false, false, false, 130), 'row');
         echo "
-                                    ";
-        // line 131
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 131, $this->source); })()), "dateModif", [], "any", false, false, false, 131), 'row');
+                                        </div>
+                                        <div class=\"col\">
+                                            ";
+        // line 133
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 133, $this->source); })()), "nbJustificatifs", [], "any", false, false, false, 133), 'row');
         echo "
-                                    ";
-        // line 132
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 132, $this->source); })()), "idEtat", [], "any", false, false, false, 132), 'row');
+                                        </div>
+                                        <div class=\"col\">
+                                            ";
+        // line 136
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 136, $this->source); })()), "montantValide", [], "any", false, false, false, 136), 'row');
         echo "
+                                        </div>
+                                    </div>
+                                    <div class=\"row\">
+                                        <div class=\"col\">
+                                            ";
+        // line 141
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 141, $this->source); })()), "dateModif", [], "any", false, false, false, 141), 'row');
+        echo "
+                                        </div>
+                                        <div class=\"col\">
+                                            ";
+        // line 144
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 144, $this->source); })()), "idEtat", [], "any", false, false, false, 144), 'row');
+        echo "
+                                        </div>
+                                    </div>
                                     <button type=\"submit\" class=\"btn btn-lg btn-primary\">Créer</button>
                                 ";
-        // line 134
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 134, $this->source); })()), 'form_end');
+        // line 148
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 148, $this->source); })()), 'form_end');
         echo "
                             </div>
                         </div>
@@ -300,7 +314,7 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
                 <div class=\"modal-footer\">
                     <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
                     <a class=\"btn btn-primary\" href=\"";
-        // line 155
+        // line 169
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
                 </div>
@@ -309,20 +323,20 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
     </div>
 
     <script src=\"";
-        // line 161
+        // line 175
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
     <script src=\" ";
-        // line 163
+        // line 177
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 164
+        // line 178
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 165
+        // line 179
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -346,7 +360,7 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  326 => 165,  322 => 164,  318 => 163,  313 => 161,  304 => 155,  280 => 134,  275 => 132,  271 => 131,  267 => 130,  263 => 129,  259 => 128,  253 => 125,  247 => 122,  241 => 119,  220 => 101,  191 => 75,  147 => 34,  128 => 17,  118 => 16,  105 => 12,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  340 => 179,  336 => 178,  332 => 177,  327 => 175,  318 => 169,  294 => 148,  287 => 144,  281 => 141,  273 => 136,  267 => 133,  261 => 130,  253 => 125,  247 => 122,  241 => 119,  220 => 101,  191 => 75,  147 => 34,  128 => 17,  118 => 16,  105 => 12,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -359,7 +373,7 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
     {{ parent() }}
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">
-    <link href=\"{{ asset('css/sb-admin-2.min.css') }}\" rel=\"stylesheet\" type=\"text/css\">
+    <link href=\"{{ asset('css/sb-admin-2.css') }}\" rel=\"stylesheet\" type=\"text/css\">
     <link href=\"{{ asset('fontawesome/css/all.min.css') }}\" rel=\"stylesheet\" type=\"text/css\">
     <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
     <link href=\"{{ asset('css/formFicheFrais.css') }}\" type=\"text/css\" rel=\"stylesheet\">
@@ -478,11 +492,25 @@ class __TwigTemplate_3927ac16a6e202f721117406b91552e4 extends Template
                                             {{ form_row(form.idVisiteur) }}
                                         </div>
                                     </div>
-                                    {{ form_row(form.mois) }}
-                                    {{ form_row(form.nbJustificatifs) }}
-                                    {{ form_row(form.montantValide) }}
-                                    {{ form_row(form.dateModif) }}
-                                    {{ form_row(form.idEtat) }}
+                                    <div class=\"row\">
+                                        <div class=\"col\">
+                                            {{ form_row(form.mois) }}
+                                        </div>
+                                        <div class=\"col\">
+                                            {{ form_row(form.nbJustificatifs) }}
+                                        </div>
+                                        <div class=\"col\">
+                                            {{ form_row(form.montantValide) }}
+                                        </div>
+                                    </div>
+                                    <div class=\"row\">
+                                        <div class=\"col\">
+                                            {{ form_row(form.dateModif) }}
+                                        </div>
+                                        <div class=\"col\">
+                                            {{ form_row(form.idEtat) }}
+                                        </div>
+                                    </div>
                                     <button type=\"submit\" class=\"btn btn-lg btn-primary\">Créer</button>
                                 {{ form_end(form) }}
                             </div>

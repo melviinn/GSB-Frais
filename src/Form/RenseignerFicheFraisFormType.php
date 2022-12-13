@@ -40,7 +40,7 @@ class RenseignerFicheFraisFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Id Visiteur', 
+                'label' => 'Visiteur', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -109,7 +109,7 @@ class RenseignerFicheFraisFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Id Etat', 
+                'label' => 'Etat', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

@@ -11,22 +11,21 @@ use Doctrine\ORM\Mapping as ORM;
 class FicheFrais
 {
     #[ORM\Id]
+    #[ORM\GeneratedValue()]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\ManyToOne(inversedBy: 'ficheFraisIdVisiteur')]
-    #[ORM\Id]
     private ?User $idVisiteur = null;
 
     #[ORM\Column]
-    #[ORM\Id]
-    private ?string $mois = null;
+    private ?int $mois = null;
 
     #[ORM\Column]
     private ?int $nbJustificatifs = null;
 
     #[ORM\Column(length: 15)]
-    private ?string $montantValide = null;
+    private ?int $montantValide = null;
 
     #[ORM\Column(length: 10)]
     private ?string $dateModif = null;
@@ -34,24 +33,13 @@ class FicheFrais
     #[ORM\ManyToOne(inversedBy: 'ficheFrais')]
     private ?Etat $idEtat = null;
 
-    #[ORM\OneToMany(mappedBy: 'mois', targetEntity: LigneFraisForfait::class)]
-    private Collection $ligneFraisForfaits;
-
-    #[ORM\OneToMany(mappedBy: 'mois', targetEntity: LigneFraisHorsForfait::class)]
-    private Collection $ligneFraisHorsForfaits;
-
-    public function __construct()
-    {
-        $this->ligneFraisForfaits = new ArrayCollection();
-        $this->ligneFraisHorsForfaits = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(int $id): self
     {
         $this->id = $id;
 
@@ -70,12 +58,12 @@ class FicheFrais
         return $this;
     }
 
-    public function getMontantValide(): ?string
+    public function getMontantValide(): ?int
     {
         return $this->montantValide;
     }
 
-    public function setMontantValide(string $montantValide): self
+    public function setMontantValide(int $montantValide): self
     {
         $this->montantValide = $montantValide;
 
@@ -94,12 +82,12 @@ class FicheFrais
         return $this;
     }
 
-    public function getMois(): ?string
+    public function getMois(): ?int
     {
         return $this->mois;
     }
 
-    public function setMois(string $mois): self
+    public function setMois(int $mois): self
     {
         $this->mois = $mois;
 
@@ -130,63 +118,4 @@ class FicheFrais
         return $this;
     }
 
-    /**
-     * @return Collection<int, LigneFraisForfait>
-     */
-    public function getLigneFraisForfaits(): Collection
-    {
-        return $this->ligneFraisForfaits;
-    }
-
-    public function addLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
-    {
-        if (!$this->ligneFraisForfaits->contains($ligneFraisForfait)) {
-            $this->ligneFraisForfaits->add($ligneFraisForfait);
-            $ligneFraisForfait->setMois($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
-    {
-        if ($this->ligneFraisForfaits->removeElement($ligneFraisForfait)) {
-            // set the owning side to null (unless already changed)
-            if ($ligneFraisForfait->getMois() === $this) {
-                $ligneFraisForfait->setMois(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, LigneFraisHorsForfait>
-     */
-    public function getLigneFraisHorsForfaits(): Collection
-    {
-        return $this->ligneFraisHorsForfaits;
-    }
-
-    public function addLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
-    {
-        if (!$this->ligneFraisHorsForfaits->contains($ligneFraisHorsForfait)) {
-            $this->ligneFraisHorsForfaits->add($ligneFraisHorsForfait);
-            $ligneFraisHorsForfait->setMois($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
-    {
-        if ($this->ligneFraisHorsForfaits->removeElement($ligneFraisHorsForfait)) {
-            // set the owning side to null (unless already changed)
-            if ($ligneFraisHorsForfait->getMois() === $this) {
-                $ligneFraisHorsForfait->setMois(null);
-            }
-        }
-
-        return $this;
-    }
 }

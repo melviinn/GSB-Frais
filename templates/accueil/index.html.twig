@@ -6,7 +6,7 @@
     {{ parent() }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/8662a536ba.js" crossorigin="anonymous"></script>
 {% endblock %}
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_fiche_frais') }}">
+                <a class="nav-link" href="{{ path('app_frais_forfait') }}">
                     <i class="fas fa-fw fa-plus-circle"></i>
                     <span>Renseigner</span>
                 </a>
@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Afficher Fiche Frais  -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ path('app_visu_frais') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Afficher</span>
                 </a>
@@ -60,21 +60,6 @@
 
             <!-- Diviseur -->
             <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link collapsed dropdown-toggle " href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo" id="dropdownMenuLink">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Fiche Frais</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="{{ path('app_logout') }}">Buttons</a>
-                        <a class="collapse-item" href="#">Cards</a>
-                    </div>
-                </div>
-            </li>
         </ul>
         <!-- Fin de la Sidebar -->
 
@@ -96,7 +81,7 @@
                         
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ app.user.userIdentifier }}</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ app.user.login }}</span>
                                     <i class="fas fa-user"></i>
                                 </a>
                                 <!-- Dropdown - Information Visiteur -->

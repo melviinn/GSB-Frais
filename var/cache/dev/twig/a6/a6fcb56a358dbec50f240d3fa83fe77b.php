@@ -2084,6 +2084,6 @@ class __TwigTemplate_34bd4a9e6e6f96ca58e52837ec4045b5 extends Template
         {{ tree.form_tree_details(childName, childData, forms_by_hash) }}
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/home/developpeur/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

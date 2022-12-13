@@ -406,7 +406,7 @@ class Configuration implements ConfigurationInterface
                         })
                         ->then(static function ($v) {
                             $v = (array) $v;
-                            // Key that should not be rewritten to the connection config
+                            // Key that should not be rewritten to the entity-manager config
                             $excludedKeys  = [
                                 'default_entity_manager' => true,
                                 'auto_generate_proxy_classes' => true,
@@ -414,6 +414,7 @@ class Configuration implements ConfigurationInterface
                                 'proxy_namespace' => true,
                                 'resolve_target_entities' => true,
                                 'resolve_target_entity' => true,
+                                'controller_resolver' => true,
                             ];
                             $entityManager = [];
                             foreach ($v as $key => $value) {
@@ -466,6 +467,19 @@ class Configuration implements ConfigurationInterface
                         ->end()
                         ->scalarNode('proxy_dir')->defaultValue('%kernel.cache_dir%/doctrine/orm/Proxies')->end()
                         ->scalarNode('proxy_namespace')->defaultValue('Proxies')->end()
+                        ->arrayNode('controller_resolver')
+                            ->canBeDisabled()
+                            ->children()
+                                ->booleanNode('auto_mapping')
+                                    ->defaultTrue()
+                                    ->info('Set to false to disable using route placeholders as lookup criteria when the primary key doesn\'t match the argument name')
+                                ->end()
+                                ->booleanNode('evict_cache')
+                                    ->info('Set to true to fetch the entity from the database instead of using the cache, if any')
+                                    ->defaultFalse()
+                                ->end()
+                            ->end()
+                        ->end()
                     ->end()
                     ->fixXmlConfig('entity_manager')
                     ->append($this->getOrmEntityManagersNode())

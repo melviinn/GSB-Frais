@@ -93,7 +93,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">
     <link href=\"";
         // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sb-admin-2.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/sb-admin-2.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
     <link href=\"";
         // line 10
@@ -157,7 +157,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
         // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_fiche_frais");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_frais_forfait");
         echo "\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
@@ -166,7 +166,10 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Afficher Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
+                <a class=\"nav-link\" href=\"";
+        // line 55
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_visu_frais");
+        echo "\">
                     <i class=\"fas fa-fw fa-table\"></i>
                     <span>Afficher</span>
                 </a>
@@ -174,24 +177,6 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Diviseur -->
             <hr class=\"sidebar-divider\">
-
-            <li class=\"nav-item\">
-                <a class=\"nav-link collapsed dropdown-toggle \" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\"
-                    aria-expanded=\"true\" aria-controls=\"collapseTwo\" id=\"dropdownMenuLink\">
-                    <i class=\"fas fa-fw fa-cog\"></i>
-                    <span>Fiche Frais</span>
-                </a>
-                <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
-                    <div class=\"bg-white py-2 collapse-inner rounded\">
-                        <h6 class=\"collapse-header\">Custom Components:</h6>
-                        <a class=\"collapse-item\" href=\"";
-        // line 73
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        echo "\">Buttons</a>
-                        <a class=\"collapse-item\" href=\"#\">Cards</a>
-                    </div>
-                </div>
-            </li>
         </ul>
         <!-- Fin de la Sidebar -->
 
@@ -214,8 +199,8 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
-        // line 99
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 99, $this->source); })()), "user", [], "any", false, false, false, 99), "userIdentifier", [], "any", false, false, false, 99), "html", null, true);
+        // line 84
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "user", [], "any", false, false, false, 84), "login", [], "any", false, false, false, 84), "html", null, true);
         echo "</span>
                                     <i class=\"fas fa-user\"></i>
                                 </a>
@@ -247,7 +232,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
                 <div class=\"modal-footer\">
                     <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
                     <a class=\"btn btn-primary\" href=\"";
-        // line 129
+        // line 114
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
                 </div>
@@ -255,20 +240,20 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
         </div>
     </div>
     <script src=\"";
-        // line 134
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
     <script src=\" ";
-        // line 136
+        // line 121
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 137
+        // line 122
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 138
+        // line 123
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -298,7 +283,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
     public function getDebugInfo()
     {
-        return array (  272 => 138,  268 => 137,  264 => 136,  259 => 134,  251 => 129,  218 => 99,  189 => 73,  160 => 47,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  257 => 123,  253 => 122,  249 => 121,  244 => 119,  236 => 114,  203 => 84,  171 => 55,  160 => 47,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -311,7 +296,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
     {{ parent() }}
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">
-    <link href=\"{{ asset('css/sb-admin-2.min.css') }}\" rel=\"stylesheet\" type=\"text/css\">
+    <link href=\"{{ asset('css/sb-admin-2.css') }}\" rel=\"stylesheet\" type=\"text/css\">
     <link href=\"{{ asset('fontawesome/css/all.min.css') }}\" rel=\"stylesheet\" type=\"text/css\">
     <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
 {% endblock %}
@@ -349,7 +334,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_fiche_frais') }}\">
+                <a class=\"nav-link\" href=\"{{ path('app_frais_forfait') }}\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
                 </a>
@@ -357,7 +342,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Afficher Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
+                <a class=\"nav-link\" href=\"{{ path('app_visu_frais') }}\">
                     <i class=\"fas fa-fw fa-table\"></i>
                     <span>Afficher</span>
                 </a>
@@ -365,21 +350,6 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Diviseur -->
             <hr class=\"sidebar-divider\">
-
-            <li class=\"nav-item\">
-                <a class=\"nav-link collapsed dropdown-toggle \" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\"
-                    aria-expanded=\"true\" aria-controls=\"collapseTwo\" id=\"dropdownMenuLink\">
-                    <i class=\"fas fa-fw fa-cog\"></i>
-                    <span>Fiche Frais</span>
-                </a>
-                <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
-                    <div class=\"bg-white py-2 collapse-inner rounded\">
-                        <h6 class=\"collapse-header\">Custom Components:</h6>
-                        <a class=\"collapse-item\" href=\"{{ path('app_logout') }}\">Buttons</a>
-                        <a class=\"collapse-item\" href=\"#\">Cards</a>
-                    </div>
-                </div>
-            </li>
         </ul>
         <!-- Fin de la Sidebar -->
 
@@ -401,7 +371,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
                         
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                    <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">{{ app.user.userIdentifier }}</span>
+                                    <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">{{ app.user.login }}</span>
                                     <i class=\"fas fa-user\"></i>
                                 </a>
                                 <!-- Dropdown - Information Visiteur -->
@@ -448,6 +418,6 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
 
 {% endblock %}
-", "accueil/index.html.twig", "/home/developpeur/GSB-Frais/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/templates/accueil/index.html.twig");
     }
 }

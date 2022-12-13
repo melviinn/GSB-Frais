@@ -3,36 +3,41 @@
 namespace App\Entity;
 
 use App\Repository\LigneFraisForfaitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LigneFraisForfaitRepository::class)]
 class LigneFraisForfait
 {
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'ligneFraisForfaits')]
-    #[ORM\Id]
+    #[ORM\JoinColumn(nullable: false)]
     private ?User $idVisiteur = null;
 
-    #[ORM\ManyToOne(inversedBy: 'ligneFraisForfaits')]
-    #[ORM\Id]
+    #[ORM\Column]
+    private ?int $mois = null;
+
+    #[ORM\ManyToOne(inversedBy: 'ligneFraisForfaitsIdFraisForfait')]
+    #[ORM\JoinColumn(nullable: false)]
     private ?FraisForfait $idFraisForfait = null;
+
+    protected $fraisForfait;
 
     #[ORM\Column]
     private ?int $quantite = null;
 
-    #[ORM\ManyToOne(inversedBy: 'ligneFraisForfaits')]
-    private ?FicheFrais $mois = null;
-
-    public function getQuantite(): ?int
+    public function __construct()
     {
-        return $this->quantite;
+        $this->fraisForfait = new ArrayCollection();
     }
 
-    public function setQuantite(int $quantite): self
+    public function getId(): ?int
     {
-        $this->quantite = $quantite;
-
-        return $this;
+        return $this->id;
     }
 
     public function getIdVisiteur(): ?User
@@ -43,6 +48,18 @@ class LigneFraisForfait
     public function setIdVisiteur(?User $idVisiteur): self
     {
         $this->idVisiteur = $idVisiteur;
+
+        return $this;
+    }
+
+    public function getMois(): ?int
+    {
+        return $this->mois;
+    }
+
+    public function setMois(?int $mois): self
+    {
+        $this->mois = $mois;
 
         return $this;
     }
@@ -59,14 +76,14 @@ class LigneFraisForfait
         return $this;
     }
 
-    public function getMois(): ?FicheFrais
+    public function getQuantite(): ?int
     {
-        return $this->mois;
+        return $this->quantite;
     }
 
-    public function setMois(?FicheFrais $mois): self
+    public function setQuantite(int $quantite): self
     {
-        $this->mois = $mois;
+        $this->quantite = $quantite;
 
         return $this;
     }

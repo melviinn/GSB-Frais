@@ -171,6 +171,6 @@ class __TwigTemplate_623a02227a408ec46cd5ec27706ae4d8 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/melvin/Desktop/TEST/GSB-Frais/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

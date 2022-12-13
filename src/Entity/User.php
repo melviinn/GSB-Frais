@@ -53,18 +53,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'idVisiteur', targetEntity: FicheFrais::class)]
     private Collection $ficheFraisIdVisiteur;
 
-    #[ORM\OneToMany(mappedBy: 'idVisiteur', targetEntity: LigneFraisForfait::class)]
-    private Collection $ligneFraisForfaits;
-
     #[ORM\OneToMany(mappedBy: 'idVisiteur', targetEntity: LigneFraisHorsForfait::class)]
     private Collection $ligneFraisHorsForfaits;
+
+    #[ORM\OneToMany(mappedBy: 'idVisiteur', targetEntity: LigneFraisForfait::class)]
+    private Collection $ligneFraisForfaits;
 
 
     public function __construct()
     {
         $this->ficheFraisIdVisiteur = new ArrayCollection();
-        $this->ligneFraisForfaits = new ArrayCollection();
         $this->ligneFraisHorsForfaits = new ArrayCollection();
+        $this->ligneFraisForfaits = new ArrayCollection();
     }
 
     public function getId(): ?string
@@ -98,7 +98,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->login;
+        return (string) $this->id;
     }
 
     /**
@@ -246,62 +246,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, LigneFraisForfait>
-     */
-    public function getLigneFraisForfaits(): Collection
-    {
-        return $this->ligneFraisForfaits;
-    }
-
-    public function addLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
-    {
-        if (!$this->ligneFraisForfaits->contains($ligneFraisForfait)) {
-            $this->ligneFraisForfaits->add($ligneFraisForfait);
-            $ligneFraisForfait->setIdVisiteur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
-    {
-        if ($this->ligneFraisForfaits->removeElement($ligneFraisForfait)) {
-            // set the owning side to null (unless already changed)
-            if ($ligneFraisForfait->getIdVisiteur() === $this) {
-                $ligneFraisForfait->setIdVisiteur(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, LigneFraisHorsForfait>
-     */
-    public function getLigneFraisHorsForfaits(): Collection
-    {
-        return $this->ligneFraisHorsForfaits;
-    }
-
-    public function addLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
-    {
-        if (!$this->ligneFraisHorsForfaits->contains($ligneFraisHorsForfait)) {
-            $this->ligneFraisHorsForfaits->add($ligneFraisHorsForfait);
-            $ligneFraisHorsForfait->setIdVisiteur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLigneFraisHorsForfait(LigneFraisHorsForfait $ligneFraisHorsForfait): self
-    {
-        if ($this->ligneFraisHorsForfaits->removeElement($ligneFraisHorsForfait)) {
-            // set the owning side to null (unless already changed)
-            if ($ligneFraisHorsForfait->getIdVisiteur() === $this) {
-                $ligneFraisHorsForfait->setIdVisiteur(null);
-            }
-        }
-        return $this;
+    public function __toString() {
+        return $this->prenom;
     }
 }

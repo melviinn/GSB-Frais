@@ -149,6 +149,6 @@ class __TwigTemplate_18d8c9246bede86daf15f20716176287 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url }) }}
 {% endblock %}
-", "@WebProfiler/Profiler/cancel.html.twig", "/home/developpeur/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
+", "@WebProfiler/Profiler/cancel.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
     }
 }

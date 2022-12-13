@@ -11,29 +11,31 @@ use Doctrine\ORM\Mapping as ORM;
 class FraisForfait
 {
     #[ORM\Id]
+    #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?string $id = null;
+    private ?int $id = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column]
     private ?string $libelle = null;
 
-    #[ORM\Column(length: 10)]
-    private ?string $montant = null;
+    #[ORM\Column]
+    private ?int $montant = null;
+
 
     #[ORM\OneToMany(mappedBy: 'idFraisForfait', targetEntity: LigneFraisForfait::class)]
-    private Collection $ligneFraisForfaits;
+    private Collection $ligneFraisForfaitsIdFraisForfait;
 
     public function __construct()
     {
-        $this->ligneFraisForfaits = new ArrayCollection();
+        $this->ligneFraisForfaitsIdFraisForfait = new ArrayCollection();
     }
 
-    public function getId(): ?string
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(int $id): self
     {
         $this->id = $id;
 
@@ -52,45 +54,53 @@ class FraisForfait
         return $this;
     }
 
-    public function getMontant(): ?string
+    public function getMontant(): ?int
     {
         return $this->montant;
     }
 
-    public function setMontant(string $montant): self
+    public function setMontant(int $montant): self
     {
         $this->montant = $montant;
 
         return $this;
     }
 
+
     /**
      * @return Collection<int, LigneFraisForfait>
      */
-    public function getLigneFraisForfaits(): Collection
+    public function getLigneFraisForfaitsIdFraisForfait(): Collection
     {
-        return $this->ligneFraisForfaits;
+        return $this->ligneFraisForfaitsIdFraisForfait;
     }
 
-    public function addLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    public function addLigneFraisForfaitsIdFraisForfait(LigneFraisForfait $ligneFraisForfaitsIdFraisForfait): self
     {
-        if (!$this->ligneFraisForfaits->contains($ligneFraisForfait)) {
-            $this->ligneFraisForfaits->add($ligneFraisForfait);
-            $ligneFraisForfait->setIdFraisForfait($this);
+        if (!$this->ligneFraisForfaitsIdFraisForfait->contains($ligneFraisForfaitsIdFraisForfait)) {
+            $this->ligneFraisForfaitsIdFraisForfait->add($ligneFraisForfaitsIdFraisForfait);
+            $ligneFraisForfaitsIdFraisForfait->setIdFraisForfait($this);
         }
 
         return $this;
     }
 
-    public function removeLigneFraisForfait(LigneFraisForfait $ligneFraisForfait): self
+    public function removeLigneFraisForfaitsIdFraisForfait(LigneFraisForfait $ligneFraisForfaitsIdFraisForfait): self
     {
-        if ($this->ligneFraisForfaits->removeElement($ligneFraisForfait)) {
+        if ($this->ligneFraisForfaitsIdFraisForfait->removeElement($ligneFraisForfaitsIdFraisForfait)) {
             // set the owning side to null (unless already changed)
-            if ($ligneFraisForfait->getIdFraisForfait() === $this) {
-                $ligneFraisForfait->setIdFraisForfait(null);
+            if ($ligneFraisForfaitsIdFraisForfait->getIdFraisForfait() === $this) {
+                $ligneFraisForfaitsIdFraisForfait->setIdFraisForfait(null);
             }
         }
 
         return $this;
     }
+
+    public function __toString() {
+        return $this->libelle;
+    }
+
+
+
 }

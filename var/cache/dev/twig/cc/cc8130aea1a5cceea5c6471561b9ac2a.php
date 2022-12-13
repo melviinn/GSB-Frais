@@ -174,6 +174,6 @@ class __TwigTemplate_a680e0ad786560cc244694a0a446bfca extends Template
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/Users/melvin/Desktop/TEST/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

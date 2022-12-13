@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Source Sans Pro';
+    font-family: 'Spline Sans';
+}
+
+body {
+    background-color: white;
 }
 
 .box {
@@ -14,7 +20,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(224, 216, 216);
+    /* background: rgb(224, 216, 216); */
+    background: #C6C5B9;
 }
 
 .login-box {
@@ -35,7 +42,7 @@
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #277925, #277925);
+    background: linear-gradient(0deg, transparent, #94ACAC, #94ACAC);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -47,7 +54,7 @@
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #277925, #277925);
+    background: linear-gradient(0deg, transparent, #94ACAC, #94ACAC);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
@@ -76,7 +83,7 @@
 }
 
 .form-login h2 {
-    color: #277925;
+    color: #94ACAC;
     font-weight: 400;
     font-size: 1.5em;
     text-align: center;
@@ -114,7 +121,7 @@
 }
 
 .input-box input:valid ~ span, .input-box input:focus ~ span {
-    color: #277925;
+    color: #94ACAC;
     transform: translateX(-5px) translateY(-34px);
     font-size: 0.75em;
     transition: 0.3s;
@@ -126,7 +133,7 @@
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #277925;
+    background: #94ACAC;
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
@@ -151,7 +158,7 @@
 }
 
 .links a:hover {
-    color: #277925;
+    color: #94ACAC;
 }
 
 button {
@@ -159,7 +166,7 @@ button {
     justify-content: center;
     border: none;
     outline: none;
-    background: #277925;
+    background: #94ACAC;
     padding: 11px 25px;
     width: 100px;
     margin-top: 20px;

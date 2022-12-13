@@ -86,7 +86,11 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 6
-        echo "    <link href=\"";
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+    <link href=\"";
+        // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/loginVisiteur.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\">
 ";
@@ -98,7 +102,7 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
 
     }
 
-    // line 9
+    // line 10
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,7 +112,7 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 10
+        // line 11
         echo "<div class=\"box\">
     <form method=\"post\">
         <div class=\"login-box\">
@@ -126,13 +130,13 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
                 </div>
                 <div class=\"links\">
                     <a href=\"";
-        // line 26
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comptable");
         echo "\">Vous êtes Comptable ?</a>
                 </div>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 29
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                 <button class=\"btn btn-lg btn-primary\" type=\"submit\">Connexion</button>
@@ -161,7 +165,7 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
 
     public function getDebugInfo()
     {
-        return array (  136 => 29,  130 => 26,  112 => 10,  102 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  140 => 30,  134 => 27,  116 => 11,  106 => 10,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -171,6 +175,7 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
 {% block title %}Connexion{% endblock %}
 
 {% block stylesheets %}
+    {{ parent() }}
     <link href=\"{{ asset('css/loginVisiteur.css') }}\" type=\"text/css\" rel=\"stylesheet\">
 {% endblock %}
 
@@ -201,6 +206,6 @@ class __TwigTemplate_06eba60be063f588dd3fc8b34b860387 extends Template
     </form>
 </box>
 {% endblock %}
-", "login/visiteur.html.twig", "/home/developpeur/GSB-Frais/templates/login/visiteur.html.twig");
+", "login/visiteur.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/templates/login/visiteur.html.twig");
     }
 }
