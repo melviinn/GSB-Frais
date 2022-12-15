@@ -24,6 +24,7 @@ class FraisForfaitType extends AbstractType
             ],
             'attr' => [
                 'class' => 'form-control my-4',
+                'readonly' => true,
             ],
             'label' => false, 
             'label_attr' => [

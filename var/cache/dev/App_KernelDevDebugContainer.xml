@@ -324,9 +324,6 @@
     <service id="App\Form\FicheFraisType" class="App\Form\FicheFraisType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\FraisForfaitAllType" class="App\Form\FraisForfaitAllType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\FraisForfaitType" class="App\Form\FraisForfaitType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -930,7 +927,6 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\FicheFraisType</argument>
-        <argument>App\Form\FraisForfaitAllType</argument>
         <argument>App\Form\FraisForfaitType</argument>
         <argument>App\Form\FraisHorsForfaitType</argument>
         <argument>App\Form\LigneFraisForfaitType</argument>
@@ -2050,7 +2046,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.VQUdaIi"/>
+      <argument type="service" id=".service_locator.JxDpOJH"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4357,8 +4353,6 @@
     <service id=".abstract.instanceof.App\Controller\VisiteurController" class="App\Controller\VisiteurController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FicheFraisType" class="App\Form\FicheFraisType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FicheFraisType" class="App\Form\FicheFraisType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FraisForfaitAllType" class="App\Form\FraisForfaitAllType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\FraisForfaitAllType" class="App\Form\FraisForfaitAllType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FraisForfaitType" class="App\Form\FraisForfaitType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FraisForfaitType" class="App\Form\FraisForfaitType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FraisHorsForfaitType" class="App\Form\FraisHorsForfaitType" autowire="true" abstract="true"/>
@@ -4893,11 +4887,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.VQUdaIi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JxDpOJH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\FicheFraisType" type="service_closure" id="App\Form\FicheFraisType"/>
-        <argument key="App\Form\FraisForfaitAllType" type="service_closure" id="App\Form\FraisForfaitAllType"/>
         <argument key="App\Form\FraisForfaitType" type="service_closure" id="App\Form\FraisForfaitType"/>
         <argument key="App\Form\FraisHorsForfaitType" type="service_closure" id="App\Form\FraisHorsForfaitType"/>
         <argument key="App\Form\LigneFraisForfaitType" type="service_closure" id="App\Form\LigneFraisForfaitType"/>
@@ -5947,7 +5940,7 @@
     <service id=".service_locator.IJyWPwb" alias=".service_locator.kXtg5m1"/>
     <service id=".service_locator.IaG8Qg8" alias=".service_locator.z1pbfDW"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.mDMSZ9m" alias=".service_locator.VQUdaIi"/>
+    <service id=".service_locator.uH1gRcn" alias=".service_locator.JxDpOJH"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
     <service id=".service_locator._eRAkJb" alias=".service_locator.jIxfAsi"/>
     <service id="validator" alias="debug.validator"/>

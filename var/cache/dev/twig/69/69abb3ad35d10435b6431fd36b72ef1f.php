@@ -52,7 +52,10 @@ class __TwigTemplate_18511d89ce9a3898aa888d154bca008b extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link rel=\"icon\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Logo-gsb.png"), "html", null, true);
+        echo "\">
         ";
         // line 8
         echo "        ";
@@ -172,9 +175,14 @@ class __TwigTemplate_18511d89ce9a3898aa888d154bca008b extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  153 => 18,  140 => 14,  130 => 13,  118 => 10,  113 => 9,  103 => 8,  84 => 5,  72 => 19,  70 => 18,  66 => 16,  64 => 13,  61 => 12,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  156 => 18,  143 => 14,  133 => 13,  121 => 10,  116 => 9,  106 => 8,  87 => 5,  75 => 19,  73 => 18,  69 => 16,  67 => 13,  64 => 12,  61 => 8,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -184,7 +192,7 @@ class __TwigTemplate_18511d89ce9a3898aa888d154bca008b extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link rel=\"icon\" href=\"{{ asset('Logo-gsb.png') }}\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             <link href=\"{{ asset('css/base.css') }}\" type=\"text/css\" rel=\"stylesheet\">

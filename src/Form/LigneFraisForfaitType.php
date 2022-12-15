@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -22,7 +23,21 @@ class LigneFraisForfaitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options, ): void
     {
         $builder
-            ->add('mois', IntegerType::class, [
+            ->add('mois', ChoiceType::class, [
+                'choices' => [
+                    'Janvier' => 1,
+                    'Février' => 2,
+                    'Mars' => 3,
+                    'Avril' => 4,
+                    'Mai' => 5,
+                    'Juin' => 6,
+                    'Juillet' => 7,
+                    'Août' => 8,
+                    'Septembre' => 9,
+                    'Octobre' => 10,
+                    'Novembre' => 11,
+                    'Décembre' => 12,
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez renseigner une valeur',
@@ -32,7 +47,7 @@ class LigneFraisForfaitType extends AbstractType
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Choisissez la période d\'engagement...',
                 ],
-                'label' => 'Mois (2 chiffres)', 
+                'label' => 'Période d\'engagement', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
