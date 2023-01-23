@@ -180,10 +180,10 @@ class FraisForfait extends \App\Entity\FraisForfait implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function getId(): ?int
+    public function getId(): ?string
     {
         if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
+            return  parent::getId();
         }
 
 
@@ -195,7 +195,7 @@ class FraisForfait extends \App\Entity\FraisForfait implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function setId(int $id): \App\Entity\FraisForfait
+    public function setId(string $id): \App\Entity\FraisForfait
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);

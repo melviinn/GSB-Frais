@@ -30,12 +30,13 @@ class FraisHorsForfaitType extends AbstractType
                     'class' => 'form-label mt-4'
                 ]
             ])
-            ->add('date', TextType::class, [
+            ->add('date', DateType::class, [
+                'widget' => 'single_text',
+                'input' => 'string',
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Date du nouveau hors forfait...'
                 ],
-                'label' => 'Date', 
+                'label' => 'Date (jj/mm/aaaa)', 
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

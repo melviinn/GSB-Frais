@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LigneFraisHorsForfaitRepository;
+use DateTime as GlobalDateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;

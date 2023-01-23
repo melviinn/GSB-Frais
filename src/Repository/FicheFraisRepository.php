@@ -39,6 +39,17 @@ class FicheFraisRepository extends ServiceEntityRepository
         }
     }
 
+    public function estPremierMois($idVisiteur,$mois){
+        return $this->createQueryBuilder('f')
+            ->select('count(f.id)')
+            ->where(('f.mois = ?2'))
+            ->andWhere('f.idVisiteur = ?1')
+            ->setParameter(1, $mois)
+            ->setParameter(2, $idVisiteur)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return FicheFrais[] Returns an array of FicheFrais objects
 //     */

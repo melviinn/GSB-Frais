@@ -18,16 +18,12 @@ app_logout:
     path: /logout
     controller: App\Controller\LoginController::logout
 
-app_frais_forfait:
-    path: /frais/forfait
+app_renseigner_frais:
+    path: /renseigner/frais
     controller: App\Controller\FicheFraisController::renseigner
 
-app_frais_hors_forfait:
-    path: /frais/hors/forfait
-    controller: App\Controller\FicheFraisController::renseignerHorsForfait
-
 app_visu_frais:
-    path: /fiche/frais/visualiser
+    path: /visualiser/frais
     controller: App\Controller\FicheFraisController::visualiser
     methods: [GET]
 

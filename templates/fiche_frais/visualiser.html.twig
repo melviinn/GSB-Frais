@@ -10,6 +10,7 @@
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/8662a536ba.js" crossorigin="anonymous"></script>
     <link href="{{asset('datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> 
 
 
 
@@ -48,7 +49,7 @@
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_frais_forfait') }}">
+                <a class="nav-link" href="{{ path('app_renseigner_frais') }}">
                     <i class="fas fa-fw fa-plus-circle"></i>
                     <span>Renseigner</span>
                 </a>
@@ -103,29 +104,127 @@
                     <div class="rowtab">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Fiche de Frais : </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        {% if fiche_frais != null %}
+                                            <thead>
+                                                <tr>
+                                                    <th>Mois</th>
+                                                    <th>Nombre de justificatifs</th>
+                                                    <th>Montant total</th>
+                                                    <th>Situation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for fiches in fiche_frais %}
+                                                    {% if fiches.nbJustificatifs != null %}
+                                                        <tr>
+                                                            {% if fiches.mois == 1 %}
+                                                            <td>Janvier</td> 
+                                                            {% elseif fiches.mois == 2 %}
+                                                                <td>Février</td>
+                                                            {% elseif fiches.mois == 3 %}
+                                                                <td>Mars</td>
+                                                            {% elseif fiches.mois == 4 %}
+                                                                <td>Avril</td>
+                                                            {% elseif fiches.mois == 5 %}
+                                                                <td>Mai</td>
+                                                            {% elseif fiches.mois == 6 %}
+                                                                <td>Juin</td>
+                                                            {% elseif fiches.mois == 7 %}
+                                                                <td>Juillet</td>
+                                                            {% elseif fiches.mois == 8 %}
+                                                                <td>Août</td>
+                                                            {% elseif fiches.mois == 9 %}
+                                                                <td>Septembre</td>
+                                                            {% elseif fiches.mois == 10 %}
+                                                                <td>Octobre</td>
+                                                            {% elseif fiches.mois == 11 %}
+                                                                <td>Novembre</td>
+                                                            {% elseif fiches.mois == 12 %}
+                                                                <td>Décembre</td>
+                                                            {% endif %}  
+                                                            <td>{{ fiches.nbJustificatifs }}</td>
+                                                            <td>{{ fiches.montantValide }}€</td>
+                                                            <td>{{ fiches.idEtat }}</td>                                                      
+                                                        </tr>
+                                                    {% endif %}                                                
+                                                {% endfor %}
+                                            </tbody>
+                                        {% else %}
+                                            <tr>
+                                                <td>Aucune fiche de frais</td>
+                                            </tr>
+                                        {% endif %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Frais au Forfait :</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Libellé</th>
-                                                <th>Montant</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {% for forfaits in frais_forfait %}
+                                        {% if ligne_frais_forfait != null %}
+                                            <thead>
                                                 <tr>
-                                                    <td>{{ forfaits.libelle }}</td>
-                                                    <td>{{ forfaits.montant }}€</td>    
+                                                    <th>Libellé</th>
+                                                    <th>Quantité</th>
+                                                    <th>Mois</th>
                                                 </tr>
-                                            {% else %}
-                                                <tr>
-                                                    <td>Aucune frais forfait</td>
-                                                </tr>
-                                            {% endfor %}
-                                        </tbody>
+                                            </thead>
+                                            <tbody>
+                                                {% for lignes in ligne_frais_forfait %}
+                                                    <tr>
+                                                        {% if lignes.IdFraisForfait == KM %}
+                                                            <td>{{ lignes.IdFraisForfait }} (0.62€)</td>
+                                                        {% elseif lignes.IdFraisForfait == ETP %}
+                                                            <td>{{ lignes.IdFraisForfait }} (110€)</td>
+                                                        {% elseif lignes.IdFraisForfait == NUI %}
+                                                            <td>{{ lignes.IdFraisForfait }} (80€)</td>
+                                                        {% elseif lignes.IdFraisForfait == REP %}
+                                                            <td>{{ lignes.IdFraisForfait }} (25 €)</td>
+                                                        {% endif %}
+                                                        <td>{{ lignes.quantite }}</td>  
+                                                        {% if lignes.mois == 1 %}
+                                                            <td>Janvier</td> 
+                                                        {% elseif lignes.mois == 2 %}
+                                                            <td>Février</td>
+                                                        {% elseif lignes.mois == 3 %}
+                                                            <td>Mars</td>
+                                                        {% elseif lignes.mois == 4 %}
+                                                            <td>Avril</td>
+                                                        {% elseif lignes.mois == 5 %}
+                                                            <td>Mai</td>
+                                                        {% elseif lignes.mois == 6 %}
+                                                            <td>Juin</td>
+                                                        {% elseif lignes.mois == 7 %}
+                                                            <td>Juillet</td>
+                                                        {% elseif lignes.mois == 8 %}
+                                                            <td>Août</td>
+                                                        {% elseif lignes.mois == 9 %}
+                                                            <td>Septembre</td>
+                                                        {% elseif lignes.mois == 10 %}
+                                                            <td>Octobre</td>
+                                                        {% elseif lignes.mois == 11 %}
+                                                            <td>Novembre</td>
+                                                        {% elseif lignes.mois == 12 %}
+                                                            <td>Décembre</td>
+                                                        {% endif %} 
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        {% else %}
+                                        <tr>
+                                            <td>Aucun frais forfait</td>
+                                        </tr>
+                                        {% endif %}
                                     </table>
                                 </div>
                             </div>
@@ -165,43 +264,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Hors Classification : </h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        {% if hors_class != null %}
-                                            <thead>
-                                                <tr>
-                                                    <th>Nombre de Justificatifs</th>
-                                                    <th>Montant Total</th>
-                                                    <th>Situation</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for fiche in hors_class %}
-                                                    {% if fiche.nbJustificatifs != null %}
-                                                        <tr>
-                                                            <td>{{ fiche.nbJustificatifs }}</td>
-                                                            <td>{{ fiche.montantValide }}€</td>  
-                                                            <td>{{ fiche.idEtat }}</td>                                                      
-                                                        </tr>
-                                                    {% endif %}                                                
-                                                {% endfor %}
-                                            </tbody>
-                                        {% else %}
-                                            <tr>
-                                                <td>Aucun frais hors classification</td>
-                                            </tr>
-                                        {% endif %}
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

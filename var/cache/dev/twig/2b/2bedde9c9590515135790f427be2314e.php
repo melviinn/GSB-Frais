@@ -157,7 +157,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
         // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_frais_forfait");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_renseigner_frais");
         echo "\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
@@ -334,7 +334,7 @@ class __TwigTemplate_cbd0a6ab81860e1ad3600bd3ea3fd480 extends Template
 
             <!-- Nav Item - Renseigner Fiche Frais  -->
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_frais_forfait') }}\">
+                <a class=\"nav-link\" href=\"{{ path('app_renseigner_frais') }}\">
                     <i class=\"fas fa-fw fa-plus-circle\"></i>
                     <span>Renseigner</span>
                 </a>

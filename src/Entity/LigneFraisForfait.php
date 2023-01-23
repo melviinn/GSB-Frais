@@ -87,4 +87,13 @@ class LigneFraisForfait
 
         return $this;
     }
+
+    public function __toString()
+    {
+        if ($this->mois = 1){
+            return "Janvier";
+        } else if ($this->mois = 2){
+            return "Février";
+        }
+    }
 }

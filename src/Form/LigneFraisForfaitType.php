@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\FraisForfait;
+use App\Entity\FicheFrais;
 use App\Entity\LigneFraisForfait;
 use App\Entity\User;
 use App\Repository\FraisForfaitRepository;
@@ -40,7 +41,7 @@ class LigneFraisForfaitType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez renseigner une valeur',
+                        'message' => 'Veuillez renseigner une date d\'engagement valide...',
                     ]),
                 ],
                 'attr' => [
@@ -52,35 +53,94 @@ class LigneFraisForfaitType extends AbstractType
                     'class' => 'form-label mt-4'
                 ]
             ])
-            ->add('FraisForfait', CollectionType::class, [
-                'label' => false,
-                'entry_type' => FraisForfaitType::class,
-                'entry_options' => ['label' => false],
+            ->add('libelleKM', TextType::class, [
+                'required' => false,
                 'attr' => [
-                    'class' => 'd-flex mb-4',
+                    'class' => 'form-control mb-3',
+                    'placeholder' => 'Frais Kilométrique (0.62€)',
+                    'readonly' => true,
+                ],
+                'label' => 'Libellé', 
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
                 ]
             ])
-            ->add('nbJustificatifs', IntegerType::class, [
+            ->add('libelleREP', TextType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-3',
+                    'placeholder' => 'Repas Restaurant (25€)',
+                    'readonly' => true,
+                ],
+                'label' => false, 
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ]
+            ])
+            ->add('libelleNUI', TextType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-3',
+                    'placeholder' => 'Nuitées Hôtel (80€)',
+                    'readonly' => true,
+                ],
+                'label' => false, 
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ]
+            ])
+            ->add('libelleETP', TextType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-3',
+                    'placeholder' => 'Forfait Étape (110€)',
+                    'readonly' => true,
+                ],
+                'label' => false, 
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ]
+            ])
+            ->add('montantKM', IntegerType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-3',
+                ],
+                'label' => 'Quantité',
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ]
+            ])
+            ->add('montantREP', IntegerType::class, [
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Nb Justificatifs', 
+                'label' => false,
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
             ])
-            ->add('montantValide', IntegerType::class, [
+            ->add('montantNUI', IntegerType::class, [
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control mb-2',
+                    'class' => 'form-control',
                 ],
-                'label' => 'Montant total (€)', 
+                'label' => false,
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
             ])
-            ;
+            ->add('montantETP', IntegerType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+                'label' => false,
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
