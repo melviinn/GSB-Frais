@@ -68,10 +68,11 @@ class __TwigTemplate_1e5ca3e59cedca8ab987b50fd3882622 extends Template
         // line 16
         echo "    </head>
     <body>
+
         ";
-        // line 18
-        $this->displayBlock('body', $context, $blocks);
         // line 19
+        $this->displayBlock('body', $context, $blocks);
+        // line 20
         echo "    </body>
 </html>
 ";
@@ -152,7 +153,7 @@ class __TwigTemplate_1e5ca3e59cedca8ab987b50fd3882622 extends Template
 
     }
 
-    // line 18
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,7 +183,7 @@ class __TwigTemplate_1e5ca3e59cedca8ab987b50fd3882622 extends Template
 
     public function getDebugInfo()
     {
-        return array (  156 => 18,  143 => 14,  133 => 13,  121 => 10,  116 => 9,  106 => 8,  87 => 5,  75 => 19,  73 => 18,  69 => 16,  67 => 13,  64 => 12,  61 => 8,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  157 => 19,  144 => 14,  134 => 13,  122 => 10,  117 => 9,  107 => 8,  88 => 5,  76 => 20,  74 => 19,  69 => 16,  67 => 13,  64 => 12,  61 => 8,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -204,6 +205,7 @@ class __TwigTemplate_1e5ca3e59cedca8ab987b50fd3882622 extends Template
         {% endblock %}
     </head>
     <body>
+
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -104,7 +104,7 @@ class __TwigTemplate_07d0a46dfd063fb4284d0ac23c24ce6e extends Template
         // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatables/dataTables.bootstrap4.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\"> 
+    <link rel=\"stylesheet\" href=\"cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\">
 
 
 
@@ -200,7 +200,7 @@ class __TwigTemplate_07d0a46dfd063fb4284d0ac23c24ce6e extends Template
                         <div class=\"topbar-divider d-none d-sm-block\"></div>
 
                         <!-- Nav Item - Information Visiteur -->
-                        
+
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
@@ -256,7 +256,7 @@ class __TwigTemplate_07d0a46dfd063fb4284d0ac23c24ce6e extends Template
                     // line 125
                     if ((twig_get_attribute($this->env, $this->source, $context["fiches"], "mois", [], "any", false, false, false, 125) == 1)) {
                         // line 126
-                        echo "                                                            <td>Janvier</td> 
+                        echo "                                                            <td>Janvier</td>
                                                             ";
                     } elseif ((twig_get_attribute($this->env, $this->source,                     // line 127
 $context["fiches"], "mois", [], "any", false, false, false, 127) == 2)) {
@@ -314,10 +314,8 @@ $context["fiches"], "mois", [], "any", false, false, false, 147) == 12)) {
                         echo "                                                                <td>Décembre</td>
                                                             ";
                     }
-                    // line 149
-                    echo "  
-                                                            <td>";
                     // line 150
+                    echo "                                                            <td>";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "nbJustificatifs", [], "any", false, false, false, 150), "html", null, true);
                     echo "</td>
                                                             <td>";
@@ -327,13 +325,12 @@ $context["fiches"], "mois", [], "any", false, false, false, 147) == 12)) {
                                                             <td>";
                     // line 152
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "idEtat", [], "any", false, false, false, 152), "html", null, true);
-                    echo "</td>                                                      
+                    echo "</td>
                                                         </tr>
                                                     ";
                 }
-                // line 154
-                echo "                                                
-                                                ";
+                // line 155
+                echo "                                                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fiches'], $context['_parent'], $context['loop']);
@@ -413,12 +410,12 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 191) == (i
                 // line 194
                 echo "                                                        <td>";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 194), "html", null, true);
-                echo "</td>  
+                echo "</td>
                                                         ";
                 // line 195
                 if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "mois", [], "any", false, false, false, 195) == 1)) {
                     // line 196
-                    echo "                                                            <td>Janvier</td> 
+                    echo "                                                            <td>Janvier</td>
                                                         ";
                 } elseif ((twig_get_attribute($this->env, $this->source,                 // line 197
 $context["lignes"], "mois", [], "any", false, false, false, 197) == 2)) {
@@ -476,9 +473,8 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                     echo "                                                            <td>Décembre</td>
                                                         ";
                 }
-                // line 219
-                echo " 
-                                                    </tr>
+                // line 220
+                echo "                                                    </tr>
                                                 ";
             }
             $_parent = $context['_parent'];
@@ -538,7 +534,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                 // line 253
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "montant", [], "any", false, false, false, 253), "html", null, true);
                 echo "€</td>
-                                                        </tr>                                                    
+                                                        </tr>
                                                     ";
             }
             $_parent = $context['_parent'];
@@ -637,7 +633,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
 
     public function getDebugInfo()
     {
-        return array (  617 => 298,  613 => 297,  609 => 296,  605 => 295,  601 => 294,  597 => 293,  592 => 291,  583 => 285,  558 => 262,  552 => 258,  548 => 256,  539 => 253,  535 => 252,  531 => 251,  528 => 250,  524 => 249,  514 => 241,  512 => 240,  498 => 228,  492 => 224,  488 => 222,  480 => 219,  476 => 218,  474 => 217,  471 => 216,  469 => 215,  466 => 214,  464 => 213,  461 => 212,  459 => 211,  456 => 210,  454 => 209,  451 => 208,  449 => 207,  446 => 206,  444 => 205,  441 => 204,  439 => 203,  436 => 202,  434 => 201,  431 => 200,  429 => 199,  426 => 198,  424 => 197,  421 => 196,  419 => 195,  414 => 194,  408 => 192,  406 => 191,  401 => 190,  399 => 189,  394 => 188,  392 => 187,  387 => 186,  385 => 185,  382 => 184,  378 => 183,  368 => 175,  366 => 174,  352 => 162,  346 => 158,  342 => 156,  335 => 154,  329 => 152,  325 => 151,  321 => 150,  318 => 149,  314 => 148,  312 => 147,  309 => 146,  307 => 145,  304 => 144,  302 => 143,  299 => 142,  297 => 141,  294 => 140,  292 => 139,  289 => 138,  287 => 137,  284 => 136,  282 => 135,  279 => 134,  277 => 133,  274 => 132,  272 => 131,  269 => 130,  267 => 129,  264 => 128,  262 => 127,  259 => 126,  257 => 125,  254 => 124,  251 => 123,  247 => 122,  236 => 113,  234 => 112,  208 => 89,  168 => 52,  150 => 37,  131 => 20,  121 => 19,  105 => 12,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  613 => 298,  609 => 297,  605 => 296,  601 => 295,  597 => 294,  593 => 293,  588 => 291,  579 => 285,  554 => 262,  548 => 258,  544 => 256,  535 => 253,  531 => 252,  527 => 251,  524 => 250,  520 => 249,  510 => 241,  508 => 240,  494 => 228,  488 => 224,  484 => 222,  477 => 220,  473 => 218,  471 => 217,  468 => 216,  466 => 215,  463 => 214,  461 => 213,  458 => 212,  456 => 211,  453 => 210,  451 => 209,  448 => 208,  446 => 207,  443 => 206,  441 => 205,  438 => 204,  436 => 203,  433 => 202,  431 => 201,  428 => 200,  426 => 199,  423 => 198,  421 => 197,  418 => 196,  416 => 195,  411 => 194,  405 => 192,  403 => 191,  398 => 190,  396 => 189,  391 => 188,  389 => 187,  384 => 186,  382 => 185,  379 => 184,  375 => 183,  365 => 175,  363 => 174,  349 => 162,  343 => 158,  339 => 156,  333 => 155,  327 => 152,  323 => 151,  318 => 150,  314 => 148,  312 => 147,  309 => 146,  307 => 145,  304 => 144,  302 => 143,  299 => 142,  297 => 141,  294 => 140,  292 => 139,  289 => 138,  287 => 137,  284 => 136,  282 => 135,  279 => 134,  277 => 133,  274 => 132,  272 => 131,  269 => 130,  267 => 129,  264 => 128,  262 => 127,  259 => 126,  257 => 125,  254 => 124,  251 => 123,  247 => 122,  236 => 113,  234 => 112,  208 => 89,  168 => 52,  150 => 37,  131 => 20,  121 => 19,  105 => 12,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -654,7 +650,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
     <link href=\"{{ asset('fontawesome/css/all.min.css') }}\" rel=\"stylesheet\" type=\"text/css\">
     <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
     <link href=\"{{asset('datatables/dataTables.bootstrap4.min.css') }}\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\"> 
+    <link rel=\"stylesheet\" href=\"cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css\">
 
 
 
@@ -727,7 +723,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                         <div class=\"topbar-divider d-none d-sm-block\"></div>
 
                         <!-- Nav Item - Information Visiteur -->
-                        
+
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">{{ app.user.login }}</span>
@@ -767,7 +763,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                                                     {% if fiches.nbJustificatifs != null %}
                                                         <tr>
                                                             {% if fiches.mois == 1 %}
-                                                            <td>Janvier</td> 
+                                                            <td>Janvier</td>
                                                             {% elseif fiches.mois == 2 %}
                                                                 <td>Février</td>
                                                             {% elseif fiches.mois == 3 %}
@@ -790,12 +786,12 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                                                                 <td>Novembre</td>
                                                             {% elseif fiches.mois == 12 %}
                                                                 <td>Décembre</td>
-                                                            {% endif %}  
+                                                            {% endif %}
                                                             <td>{{ fiches.nbJustificatifs }}</td>
                                                             <td>{{ fiches.montantValide }}€</td>
-                                                            <td>{{ fiches.idEtat }}</td>                                                      
+                                                            <td>{{ fiches.idEtat }}</td>
                                                         </tr>
-                                                    {% endif %}                                                
+                                                    {% endif %}
                                                 {% endfor %}
                                             </tbody>
                                         {% else %}
@@ -835,9 +831,9 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                                                         {% elseif lignes.IdFraisForfait == REP %}
                                                             <td>{{ lignes.IdFraisForfait }} (25 €)</td>
                                                         {% endif %}
-                                                        <td>{{ lignes.quantite }}</td>  
+                                                        <td>{{ lignes.quantite }}</td>
                                                         {% if lignes.mois == 1 %}
-                                                            <td>Janvier</td> 
+                                                            <td>Janvier</td>
                                                         {% elseif lignes.mois == 2 %}
                                                             <td>Février</td>
                                                         {% elseif lignes.mois == 3 %}
@@ -860,7 +856,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                                                             <td>Novembre</td>
                                                         {% elseif lignes.mois == 12 %}
                                                             <td>Décembre</td>
-                                                        {% endif %} 
+                                                        {% endif %}
                                                     </tr>
                                                 {% endfor %}
                                             </tbody>
@@ -895,7 +891,7 @@ $context["lignes"], "mois", [], "any", false, false, false, 217) == 12)) {
                                                             <td>{{ forfait.date }}</td>
                                                             <td>{{ forfait.libelle }}</td>
                                                             <td>{{ forfait.montant }}€</td>
-                                                        </tr>                                                    
+                                                        </tr>
                                                     {% endfor %}
                                                 </tbody>
                                             {% else %}

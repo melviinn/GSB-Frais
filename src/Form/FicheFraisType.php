@@ -27,7 +27,7 @@ class FicheFraisType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Nb Justificatifs', 
+                'label' => 'Nb Justificatifs',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -37,7 +37,7 @@ class FicheFraisType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Mois', 
+                'label' => 'Mois',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -51,7 +51,7 @@ class FicheFraisType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Montant Validé', 
+                'label' => 'Montant Validé',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -65,7 +65,7 @@ class FicheFraisType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Date Modification', 
+                'label' => 'Date Modification',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

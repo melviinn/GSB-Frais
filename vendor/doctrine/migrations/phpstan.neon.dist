@@ -24,6 +24,11 @@ parameters:
             message: '~^Method Doctrine\\Migrations\\Tests\\Stub\\DoctrineRegistry::getService\(\) should return Doctrine\\Persistence\\ObjectManager but returns Doctrine\\DBAL\\Connection\|Doctrine\\ORM\\EntityManager~'
             path: tests/Doctrine/Migrations/Tests/Stub/DoctrineRegistry.php
 
+        # We cannot document the closure as precise as PHPStan wants us to.
+        -
+            message: '~^Parameter #2 \$initializer of method ProxyManager\\Factory\\LazyLoadingValueHolderFactory\:\:createProxy\(\) expects Closure\(.*\)\: bool, Closure\(.*\)\: true given\.$~'
+            path: lib/Doctrine/Migrations/Provider/LazySchemaDiffProvider.php
+
         # https://github.com/phpstan/phpstan/issues/5982
         -
             message: '~^Cannot call method getWrappedConnection\(\) on class-string\|object\.~'
@@ -47,6 +52,12 @@ parameters:
         -
             message: '~^Call to function method_exists\(\) with Doctrine\\Migrations\\Metadata\\Storage\\MetadataStorage and ''getSql'' will always evaluate to true\.$~'
             path: lib/Doctrine/Migrations/Version/DbalExecutor.php
+
+        # TODO: deprecate using the connection event manager and expose
+        # our own event manager instead.
+        -
+            message: '~^Call to deprecated method getEventManager\(\) of class Doctrine\\DBAL\\Connection\.$~'
+            path: lib/Doctrine/Migrations/DependencyFactory.php
 
     symfony:
             console_application_loader: tests/Doctrine/Migrations/Tests/doctrine-migrations-phpstan-app.php

@@ -24,7 +24,7 @@ class FicheFraisController extends AbstractController
 
         $ficheFrais = new FicheFrais();
         $user = $this->getUser();
-        
+
         $form = $this->createForm(LigneFraisForfaitType::class);
         $form->handleRequest($request);
 
@@ -39,9 +39,10 @@ class FicheFraisController extends AbstractController
             $ETP = $fraisForfaitRepository->findOneBy(['id' => 'ETP']);
             $REP = $fraisForfaitRepository->findOneBy(['id' => 'REP']);
             $NUI = $fraisForfaitRepository->findOneBy(['id' => 'NUI']);
-            $montantTotal = $form->get('montantKM')->getData()*0.62 + $form->get('montantETP')->getData()*110 
-            + $form->get('montantNUI')->getData()*80 + $form->get('montantREP')->getData()*25;
-
+            $montantTotal = $form->get('montantKM')->getData()*0.62 +
+                            $form->get('montantETP')->getData()*110 +
+                            $form->get('montantNUI')->getData()*80 +
+                            $form->get('montantREP')->getData()*25;
             if ($montantKM){
                 $ligneFraisForfait = new LigneFraisForfait();
                 $ligneFraisForfait->setIdVisiteur($user);
@@ -168,9 +169,8 @@ class FicheFraisController extends AbstractController
                 $ligneFraisForfait->setQuantite($montantETP);
                 $ligneFraisForfait->setMois($moisData);
                 $entityManager->persist($ligneFraisForfait);
-                $entityManager->flush();   
+                $entityManager->flush();
             }
-
             if (count($ficheFraisRepository->findBy(['mois' => $moisData,])) < 1){
                 $ficheFrais->setIdVisiteur($user);
                 $ficheFrais->setIdEtat($etatRepository->findOneBy(['id' => 'CR']));
@@ -183,22 +183,18 @@ class FicheFraisController extends AbstractController
                 $entityManager->persist($ligneFraisForfait);
                 $entityManager->flush();
             }
-
-            
-            
-            
             return $this->redirectToRoute('app_renseigner_frais', [], Response::HTTP_SEE_OTHER);
         }
 
         $ligneFraisHorsForfait = new LigneFraisHorsForfait();
-        
+
         $form2 = $this->createForm(FraisHorsForfaitType::class, $ligneFraisHorsForfait);
         $form2->handleRequest($request);
 
         if ($form2->isSubmitted() && $form2->isValid()) {
 
             $ligneFraisHorsForfait->setIdVisiteur($user);
-                        
+
             $entityManager->persist($ligneFraisHorsForfait);
             $entityManager->flush();
 
@@ -214,7 +210,7 @@ class FicheFraisController extends AbstractController
     public function visualiser(LigneFraisHorsForfaitRepository $ligneFraisHorsForfaitRepository, FraisForfaitRepository $fraisForfaitRepository, FicheFraisRepository $ficheFraisRepository, LigneFraisForfaitRepository $ligneFraisForfaitRepository): Response
     {
         $userId = $this->getUser()->getUserIdentifier();
-        
+
         return $this->render('fiche_frais/visualiser.html.twig', [
             'hors_forfait' => $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $userId]),
             'ligne_frais_forfait' => $ligneFraisForfaitRepository->findBy(['idVisiteur' => $userId]),

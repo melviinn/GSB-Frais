@@ -195,12 +195,11 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
                         <div class=\"topbar-divider d-none d-sm-block\"></div>
 
                         <!-- Nav Item - Information Visiteur -->
-                        
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
-        // line 84
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "user", [], "any", false, false, false, 84), "login", [], "any", false, false, false, 84), "html", null, true);
+        // line 83
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 83, $this->source); })()), "user", [], "any", false, false, false, 83), "login", [], "any", false, false, false, 83), "html", null, true);
         echo "</span>
                                     <i class=\"fas fa-user\"></i>
                                 </a>
@@ -232,7 +231,7 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
                 <div class=\"modal-footer\">
                     <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
                     <a class=\"btn btn-primary\" href=\"";
-        // line 114
+        // line 113
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
                 </div>
@@ -240,28 +239,22 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
         </div>
     </div>
     <script src=\"";
-        // line 119
+        // line 118
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
     <script src=\" ";
-        // line 121
+        // line 120
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 122
+        // line 121
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\" ";
-        // line 123
+        // line 122
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
-
-
-                
-
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -283,7 +276,7 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
 
     public function getDebugInfo()
     {
-        return array (  257 => 123,  253 => 122,  249 => 121,  244 => 119,  236 => 114,  203 => 84,  171 => 55,  160 => 47,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  256 => 122,  252 => 121,  248 => 120,  243 => 118,  235 => 113,  202 => 83,  171 => 55,  160 => 47,  142 => 32,  123 => 15,  113 => 14,  100 => 10,  96 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -368,7 +361,6 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
                         <div class=\"topbar-divider d-none d-sm-block\"></div>
 
                         <!-- Nav Item - Information Visiteur -->
-                        
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">{{ app.user.login }}</span>
@@ -411,12 +403,6 @@ class __TwigTemplate_0bbcdcacb836e7cdbc64c5a384c5914f extends Template
     <script src=\" {{ asset('jquery/jquery.min.js') }}\"></script>
     <script src=\" {{ asset('jquery-easing/jquery.easing.min.js') }}\"></script>
     <script src=\" {{ asset('js/sb-admin-2.min.js') }}\"></script>
-
-
-                
-
-
-
 {% endblock %}
 ", "accueil/index.html.twig", "/Users/melvin/Desktop/SLAM/Projets/GSB-Frais/templates/accueil/index.html.twig");
     }

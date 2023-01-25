@@ -83,7 +83,6 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - Information Visiteur -->
-                        
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ app.user.login }}</span>
@@ -120,7 +119,6 @@
                                                     <div class="row">
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.libelleKM)}}
-                                                            
                                                         </div>
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.montantKM)}}
@@ -129,7 +127,6 @@
                                                     <div class="row">
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.libelleREP)}}
-                                                            
                                                         </div>
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.montantREP)}}
@@ -138,7 +135,6 @@
                                                     <div class="row">
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.libelleNUI)}}
-                                                            
                                                         </div>
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.montantNUI)}}
@@ -147,7 +143,6 @@
                                                     <div class="row">
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.libelleETP)}}
-                                                            
                                                         </div>
                                                         <div class="col-sm-3">
                                                             {{ form_row(form.montantETP)}}
@@ -155,20 +150,19 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-lg btn-primary mb-3">Créer</button>      
-                                        {{ form_end(form) }} 
+                                            <button type="submit" class="btn btn-lg btn-primary mb-3">Créer</button>
+                                        {{ form_end(form) }}
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    
                     <div class="card shadow mb-1">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Renseigner un nouveau Frais Hors Forfait :</h6>
                         </div>
-                        <div class="card-body py-1">  
-                            <form method="post"> 
+                        <div class="card-body py-1">
+                            <form method="post">
                                 <div class="login-box">
                                     <div class="form-login mb-4">
                                         {{ form_start(form2) }}
@@ -186,13 +180,13 @@
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-lg btn-primary">Créer</button>
-                                        {{ form_end(form2) }} 
+                                        {{ form_end(form2) }}
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </div>                       
-                </div>                    
+                    </div>
+                </div>
             </div>
         </div>
     </div>
