@@ -20,8 +20,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: rgb(224, 216, 216); */
-    background: #C6C5B9;
+    background: rgb(224, 216, 216);
+    /* background: #C6C5B9; */
 }
 
 .login-box {
@@ -42,7 +42,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #94ACAC, #94ACAC);
+    background: linear-gradient(0deg, transparent, #5fca85, #3d9c5e);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -54,7 +54,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #94ACAC, #94ACAC);
+    background: linear-gradient(0deg, transparent, #5fca85, #3d9c5e);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
@@ -79,11 +79,10 @@ body {
     padding: 30px 40px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .form-login h2 {
-    color: #94ACAC;
+    color: #3d9c5e;
     font-weight: 400;
     font-size: 1.5em;
     text-align: center;
@@ -114,14 +113,14 @@ body {
     left: 0;
     padding: 20px 10px 10px;
     font-size: 1em;
-    color: #8f8f8f;
+    color: #3d9c5e;
     pointer-events: none;
     letter-spacing: 0.5px;
     transform: 0.5s;
 }
 
 .input-box input:valid ~ span, .input-box input:focus ~ span {
-    color: #94ACAC;
+    color: #3d9c5e;
     transform: translateX(-5px) translateY(-34px);
     font-size: 0.75em;
     transition: 0.3s;
@@ -133,7 +132,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #94ACAC;
+    background: #3d9c5e;
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
@@ -151,7 +150,7 @@ body {
 .links a {
     margin: 10px 0;
     font-size: 0.75em;
-    color: #8f8f8f;
+    color: #3d9c5e;
     text-decoration: none;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -166,7 +165,7 @@ button {
     justify-content: center;
     border: none;
     outline: none;
-    background: #94ACAC;
+    background: #3d9c5e;
     padding: 11px 25px;
     width: 100px;
     margin-top: 20px;
@@ -174,6 +173,12 @@ button {
     font-weight: 600;
     cursor: pointer;
 }
+
+button:hover {
+    transform: scale(1.05);
+    transition: .5s ease;
+}
+
 
 button:active {
     opacity: 0.8;

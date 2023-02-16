@@ -25,5 +25,4 @@ app_renseigner_frais:
 app_visu_frais:
     path: /visualiser/frais
     controller: App\Controller\FicheFraisController::visualiser
-    methods: [GET]
 
