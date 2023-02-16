@@ -14,14 +14,13 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
-use Symfony\Component\Routing\Annotation\Route;
 
 
 class UserAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_accueil';
+    public const LOGIN_ROUTE = 'app_visiteur';
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {

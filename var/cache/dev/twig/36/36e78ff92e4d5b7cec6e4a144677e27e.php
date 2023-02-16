@@ -147,7 +147,7 @@ class __TwigTemplate_993960274a4f814b1f6374d3e96f7db4 extends Template
                             <div class=\"links\">
                                 <a href=\"";
         // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_visiteur");
         echo "\">Vous êtes Visiteur ?</a>
                             </div>
                             <input type=\"hidden\" name=\"_csrf_token\" value=\"";
@@ -213,7 +213,7 @@ class __TwigTemplate_993960274a4f814b1f6374d3e96f7db4 extends Template
                                 <i></i>
                             </div>
                             <div class=\"links\">
-                                <a href=\"{{ path('app_accueil') }}\">Vous êtes Visiteur ?</a>
+                                <a href=\"{{ path('app_visiteur') }}\">Vous êtes Visiteur ?</a>
                             </div>
                             <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
                             <button class=\"btn btn-lg btn-primary\" type=\"submit\">Connexion</button>

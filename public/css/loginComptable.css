@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: rgb(230, 224, 224);
 }
 
 .box {
@@ -20,15 +20,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(224, 216, 216);
-    /* background: #C6C5B9; */
+    background-color: rgb(230, 224, 224);
 }
 
 .login-box {
     position: relative;
     width: 380px;
     height: 420px;
-    background: rgb(210, 204, 204);
+    background-color: rgb(210, 204, 204);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 5px 5px 15px 5px #8f8f8f;
@@ -74,7 +73,7 @@ body {
     position: absolute;
     inset: 2px;
     border-radius: 8px;
-    background: rgb(210, 204, 204);
+    background: white;
     z-index: 10;
     padding: 30px 40px;
     display: flex;
@@ -82,7 +81,7 @@ body {
 }
 
 .form-login h2 {
-    color: #3d9c5e;
+    color: #1da140;
     font-weight: 400;
     font-size: 1.5em;
     text-align: center;
@@ -113,14 +112,14 @@ body {
     left: 0;
     padding: 20px 10px 10px;
     font-size: 1em;
-    color: #3d9c5e;
+    color: #1da140;
     pointer-events: none;
     letter-spacing: 0.5px;
     transform: 0.5s;
 }
 
 .input-box input:valid ~ span, .input-box input:focus ~ span {
-    color: #3d9c5e;
+    color: #1da140;
     transform: translateX(-5px) translateY(-34px);
     font-size: 0.75em;
     transition: 0.3s;
@@ -132,7 +131,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #3d9c5e;
+    background: #1da140;
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
@@ -150,14 +149,14 @@ body {
 .links a {
     margin: 10px 0;
     font-size: 0.75em;
-    color: #3d9c5e;
+    color: #94ACAC;
     text-decoration: none;
     margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .links a:hover {
-    color: #94ACAC;
+    color: #1da140;
 }
 
 button {
@@ -165,13 +164,14 @@ button {
     justify-content: center;
     border: none;
     outline: none;
-    background: #3d9c5e;
+    background: #1da140;
     padding: 11px 25px;
     width: 100px;
     margin-top: 20px;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    color: white;
 }
 
 button:hover {

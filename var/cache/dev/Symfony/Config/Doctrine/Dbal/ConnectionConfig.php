@@ -4,7 +4,6 @@ namespace Symfony\Config\Doctrine\Dbal;
 
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ConnectionConfig'.\DIRECTORY_SEPARATOR.'SlaveConfig.php';
 require_once __DIR__.\DIRECTORY_SEPARATOR.'ConnectionConfig'.\DIRECTORY_SEPARATOR.'ReplicaConfig.php';
-require_once __DIR__.\DIRECTORY_SEPARATOR.'ConnectionConfig'.\DIRECTORY_SEPARATOR.'ShardConfig.php';
 
 use Symfony\Component\Config\Loader\ParamConfigurator;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
@@ -55,9 +54,6 @@ class ConnectionConfig
     private $serverVersion;
     private $driverClass;
     private $wrapperClass;
-    private $shardManagerClass;
-    private $shardChoser;
-    private $shardChoserService;
     private $keepSlave;
     private $keepReplica;
     private $options;
@@ -65,7 +61,6 @@ class ConnectionConfig
     private $defaultTableOptions;
     private $slaves;
     private $replicas;
-    private $shards;
     private $_usedProperties = [];
 
     /**
@@ -629,48 +624,6 @@ class ConnectionConfig
 
     /**
      * @default null
-     * @param ParamConfigurator|mixed $value
-     * @deprecated The "shard_manager_class" configuration is deprecated and not supported anymore using DBAL 3.
-     * @return $this
-     */
-    public function shardManagerClass($value): static
-    {
-        $this->_usedProperties['shardManagerClass'] = true;
-        $this->shardManagerClass = $value;
-
-        return $this;
-    }
-
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @deprecated The "shard_choser" configuration is deprecated and not supported anymore using DBAL 3.
-     * @return $this
-     */
-    public function shardChoser($value): static
-    {
-        $this->_usedProperties['shardChoser'] = true;
-        $this->shardChoser = $value;
-
-        return $this;
-    }
-
-    /**
-     * @default null
-     * @param ParamConfigurator|mixed $value
-     * @deprecated The "shard_choser_service" configuration is deprecated and not supported anymore using DBAL 3.
-     * @return $this
-     */
-    public function shardChoserService($value): static
-    {
-        $this->_usedProperties['shardChoserService'] = true;
-        $this->shardChoserService = $value;
-
-        return $this;
-    }
-
-    /**
-     * @default null
      * @param ParamConfigurator|bool $value
      * @deprecated The "keep_slave" configuration key is deprecated since doctrine-bundle 2.2. Use the "keep_replica" configuration key instead.
      * @return $this
@@ -772,22 +725,6 @@ class ConnectionConfig
         }
 
         return $this->replicas[$name];
-    }
-
-    /**
-     * @deprecated The "shards" configuration is deprecated and not supported anymore using DBAL 3.
-     * @return \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ShardConfig|$this
-     */
-    public function shard(mixed $value = []): \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ShardConfig|static
-    {
-        $this->_usedProperties['shards'] = true;
-        if (!\is_array($value)) {
-            $this->shards[] = $value;
-
-            return $this;
-        }
-
-        return $this->shards[] = new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ShardConfig($value);
     }
 
     public function __construct(array $value = [])
@@ -1038,24 +975,6 @@ class ConnectionConfig
             unset($value['wrapper_class']);
         }
 
-        if (array_key_exists('shard_manager_class', $value)) {
-            $this->_usedProperties['shardManagerClass'] = true;
-            $this->shardManagerClass = $value['shard_manager_class'];
-            unset($value['shard_manager_class']);
-        }
-
-        if (array_key_exists('shard_choser', $value)) {
-            $this->_usedProperties['shardChoser'] = true;
-            $this->shardChoser = $value['shard_choser'];
-            unset($value['shard_choser']);
-        }
-
-        if (array_key_exists('shard_choser_service', $value)) {
-            $this->_usedProperties['shardChoserService'] = true;
-            $this->shardChoserService = $value['shard_choser_service'];
-            unset($value['shard_choser_service']);
-        }
-
         if (array_key_exists('keep_slave', $value)) {
             $this->_usedProperties['keepSlave'] = true;
             $this->keepSlave = $value['keep_slave'];
@@ -1096,12 +1015,6 @@ class ConnectionConfig
             $this->_usedProperties['replicas'] = true;
             $this->replicas = array_map(function ($v) { return \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig($v) : $v; }, $value['replicas']);
             unset($value['replicas']);
-        }
-
-        if (array_key_exists('shards', $value)) {
-            $this->_usedProperties['shards'] = true;
-            $this->shards = array_map(function ($v) { return \is_array($v) ? new \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ShardConfig($v) : $v; }, $value['shards']);
-            unset($value['shards']);
         }
 
         if ([] !== $value) {
@@ -1235,15 +1148,6 @@ class ConnectionConfig
         if (isset($this->_usedProperties['wrapperClass'])) {
             $output['wrapper_class'] = $this->wrapperClass;
         }
-        if (isset($this->_usedProperties['shardManagerClass'])) {
-            $output['shard_manager_class'] = $this->shardManagerClass;
-        }
-        if (isset($this->_usedProperties['shardChoser'])) {
-            $output['shard_choser'] = $this->shardChoser;
-        }
-        if (isset($this->_usedProperties['shardChoserService'])) {
-            $output['shard_choser_service'] = $this->shardChoserService;
-        }
         if (isset($this->_usedProperties['keepSlave'])) {
             $output['keep_slave'] = $this->keepSlave;
         }
@@ -1264,9 +1168,6 @@ class ConnectionConfig
         }
         if (isset($this->_usedProperties['replicas'])) {
             $output['replicas'] = array_map(function ($v) { return $v instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ReplicaConfig ? $v->toArray() : $v; }, $this->replicas);
-        }
-        if (isset($this->_usedProperties['shards'])) {
-            $output['shards'] = array_map(function ($v) { return $v instanceof \Symfony\Config\Doctrine\Dbal\ConnectionConfig\ShardConfig ? $v->toArray() : $v; }, $this->shards);
         }
 
         return $output;

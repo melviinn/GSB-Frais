@@ -2,7 +2,24 @@ controllers:
     resource: ../src/Controller/
     type: attribute
 
-app_accueil:
+#-------------------------
+# AccueilController
+#-------------------------
+
+# Accueil #
+app_home:
+    path: /home
+    controller: App\Controller\AccueilController::accueilVisiteur
+
+app_home_comptable:
+    path: /home/comptable
+    controller: App\Controller\AccueilController::accueilComptable
+
+#-------------------------
+# LoginController
+#-------------------------
+
+app_visiteur:
     path: /
     controller: App\Controller\LoginController::visiteur
 
@@ -10,13 +27,13 @@ app_comptable:
     path: /comptable
     controller: App\Controller\LoginController::comptable
 
-app_home:
-    path: /home
-    controller: App\Controller\AccueilController::index
-
 app_logout:
     path: /logout
     controller: App\Controller\LoginController::logout
+
+#-------------------------
+# FicheFraisController
+#-------------------------
 
 app_renseigner_frais:
     path: /renseigner/frais

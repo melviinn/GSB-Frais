@@ -5,9 +5,16 @@ security:
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
+        chain_provider:
+            chain:
+                providers: [app_user_provider, app_comptable_provider]
         app_user_provider:
             entity:
                 class: App\Entity\User
+                property: login
+        app_comptable_provider:
+            entity:
+                class: App\Entity\Comptable
                 property: login
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
@@ -16,18 +23,18 @@ security:
             security: false
         main:
             lazy: true
-            provider: app_user_provider
+            provider: chain_provider
             form_login:
                 # "app_login" is the name of the route created previously
-                login_path: app_login
+                login_path: app_login, app_login_comptable
             custom_authenticator:
                 - App\Security\UserAuthenticator
                 - App\Security\VisiteurAuthenticator
+                - App\Security\ComptableAuthenticator
             entry_point: form_login
-            logout: 
+            logout:
                 path: app_logout
-                target: app_accueil
-
+                target: app_visiteur
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -37,8 +44,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/visiteur , roles: ROLE_USER }
+        # - { path: ^/comptable, roles: ROLE_ADMIN }
 
 when@test:
     security:

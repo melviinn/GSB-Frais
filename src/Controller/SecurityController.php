@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Comptable;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,5 +24,15 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+    }
+
+    #[Route(path: '/loginComptable', name: 'app_login_comptable')]
+    public function loginComptable(AuthenticationUtils $authenticationUtils, Comptable $compt): Response
+    {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('security/loginComptable.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 }
