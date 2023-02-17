@@ -36,7 +36,7 @@ class FraisHorsForfaitType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Date (jj/mm/aaaa)', 
+                'label' => 'Date (jj/mm/aaaa)',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -45,7 +45,7 @@ class FraisHorsForfaitType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Montant (€)', 
+                'label' => 'Montant (€)',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

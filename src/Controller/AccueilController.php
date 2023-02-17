@@ -10,11 +10,11 @@ class AccueilController extends AbstractController
 {
     public function accueilVisiteur(): Response
     {
-        return $this->render('accueil/index.html.twig');
+        return $this->render('accueil/visiteur.html.twig');
     }
 
     public function accueilComptable(): Response
     {
-        return $this->render('accueil/indexComptable.html.twig');
+        return $this->render('accueil/comptable.html.twig');
     }
 }

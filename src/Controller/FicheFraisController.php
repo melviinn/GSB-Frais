@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\FicheFrais;
 use App\Entity\LigneFraisForfait;
 use App\Entity\LigneFraisHorsForfait;
+use App\Form\ChoixMoisVisualiserType;
 use App\Form\FraisHorsForfaitType;
 use App\Form\LigneFraisForfaitType;
 use App\Repository\EtatRepository;
@@ -207,18 +208,39 @@ class FicheFraisController extends AbstractController
         ]);
     }
 
-    public function visualiser(LigneFraisHorsForfaitRepository $ligneFraisHorsForfaitRepository, FraisForfaitRepository $fraisForfaitRepository, FicheFraisRepository $ficheFraisRepository, LigneFraisForfaitRepository $ligneFraisForfaitRepository): Response
+    public function visualiser(Request $request, LigneFraisHorsForfaitRepository $ligneFraisHorsForfaitRepository, FraisForfaitRepository $fraisForfaitRepository, 
+    FicheFraisRepository $ficheFraisRepository, LigneFraisForfaitRepository $ligneFraisForfaitRepository, EntityManagerInterface $em): Response
     {
         $userId = $this->getUser()->getUserIdentifier();
 
+        $form = $this->createForm(ChoixMoisVisualiserType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mois = $form->get('mois')->getData();
+
+            return $this->redirectToRoute('app_visu_frais', ['mois' => $mois], Response::HTTP_SEE_OTHER);
+        }
+
+        $mois = $request->get('mois');
+
+        $hors_forfait = $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $userId]);
+        $ligne_frais_forfait = $ligneFraisForfaitRepository->findBy(['idVisiteur' => $userId, 'mois' => $mois]);
+        $fiche_frais = $ficheFraisRepository->findBy(['idVisiteur' => $userId, 'mois' => $mois]);
+        $KM = $fraisForfaitRepository->findOneBy(['id' => 'KM']);
+        $NUI = $fraisForfaitRepository->findOneBy(['id' => 'NUI']);
+        $ETP = $fraisForfaitRepository->findOneBy(['id' => 'ETP']);
+        $REP = $fraisForfaitRepository->findOneBy(['id' => 'REP']);
+
         return $this->render('fiche_frais/visualiser.html.twig', [
-            'hors_forfait' => $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $userId]),
-            'ligne_frais_forfait' => $ligneFraisForfaitRepository->findBy(['idVisiteur' => $userId]),
-            'fiche_frais' => $ficheFraisRepository->findBy(['idVisiteur' => $userId]),
-            'KM' => $fraisForfaitRepository->findOneBy(['id' => 'KM']),
-            'NUI' => $fraisForfaitRepository->findOneBy(['id' => 'NUI']),
-            'ETP' => $fraisForfaitRepository->findOneBy(['id' => 'ETP']),
-            'REP' => $fraisForfaitRepository->findOneBy(['id' => 'REP'])
+            'hors_forfait' => $hors_forfait,
+            'ligne_frais_forfait' => $ligne_frais_forfait,
+            'fiche_frais' => $fiche_frais,
+            'KM' => $KM,
+            'NUI' => $NUI,
+            'ETP' => $ETP,
+            'REP' => $REP,
+            'form' => $form->createView(),
         ]);
     }
 }

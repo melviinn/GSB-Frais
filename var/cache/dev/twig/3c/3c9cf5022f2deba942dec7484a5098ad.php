@@ -200,7 +200,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
                                         </div>
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg btn-primary mb-3\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary mb-3\">Créer</button>
                             ";
         // line 65
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 65, $this->source); })()), 'form_end');
@@ -244,7 +244,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
         echo "
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg btn-primary\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary\">Créer</button>
                             ";
         // line 94
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 94, $this->source); })()), 'form_end');
@@ -373,7 +373,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
                                         </div>
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg btn-primary mb-3\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary mb-3\">Créer</button>
                             {{ form_end(form) }}
                         </div>
                     </div>
@@ -402,7 +402,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
                                         {{ form_row(form2.montant) }}
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-lg btn-primary\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary\">Créer</button>
                             {{ form_end(form2) }}
                         </div>
                     </div>

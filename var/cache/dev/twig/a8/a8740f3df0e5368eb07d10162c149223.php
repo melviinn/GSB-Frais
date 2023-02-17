@@ -121,6 +121,21 @@ class __TwigTemplate_bd62a5e39085650f3f1e7c755c4e1f03 extends Template
         // line 13
         echo "    <div class=\"container-fluid\">
         <div class=\"rowtab\">
+            <div class=\"col-lg-6\">
+                ";
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'form_start');
+        echo "
+                    ";
+        // line 17
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "mois", [], "any", false, false, false, 17), 'row');
+        echo "
+                    <button type=\"submit\" class=\"btn btn-outline-primary mb-3\">Valider</button>
+                ";
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        echo "
+            </div>
             <div class=\"card shadow mb-4\">
                 <div class=\"card-header py-3\">
                     <h6 class=\"m-0 font-weight-bold text-primary\">Fiche de Frais : </h6>
@@ -129,9 +144,9 @@ class __TwigTemplate_bd62a5e39085650f3f1e7c755c4e1f03 extends Template
                     <div class=\"table-responsive\">
                         <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             ";
-        // line 22
-        if (((isset($context["fiche_frais"]) || array_key_exists("fiche_frais", $context) ? $context["fiche_frais"] : (function () { throw new RuntimeError('Variable "fiche_frais" does not exist.', 22, $this->source); })()) != null)) {
-            // line 23
+        // line 28
+        if (((isset($context["fiche_frais"]) || array_key_exists("fiche_frais", $context) ? $context["fiche_frais"] : (function () { throw new RuntimeError('Variable "fiche_frais" does not exist.', 28, $this->source); })()) != null)) {
+            // line 29
             echo "                                <thead>
                                     <tr>
                                         <th>Mois</th>
@@ -142,109 +157,109 @@ class __TwigTemplate_bd62a5e39085650f3f1e7c755c4e1f03 extends Template
                                 </thead>
                                 <tbody>
                                     ";
-            // line 32
+            // line 38
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["fiche_frais"]) || array_key_exists("fiche_frais", $context) ? $context["fiche_frais"] : (function () { throw new RuntimeError('Variable "fiche_frais" does not exist.', 32, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["fiche_frais"]) || array_key_exists("fiche_frais", $context) ? $context["fiche_frais"] : (function () { throw new RuntimeError('Variable "fiche_frais" does not exist.', 38, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["fiches"]) {
-                // line 33
+                // line 39
                 echo "                                        ";
-                if ((twig_get_attribute($this->env, $this->source, $context["fiches"], "nbJustificatifs", [], "any", false, false, false, 33) != null)) {
-                    // line 34
+                if ((twig_get_attribute($this->env, $this->source, $context["fiches"], "nbJustificatifs", [], "any", false, false, false, 39) != null)) {
+                    // line 40
                     echo "                                            <tr>
                                                 ";
-                    // line 35
-                    if ((twig_get_attribute($this->env, $this->source, $context["fiches"], "mois", [], "any", false, false, false, 35) == 1)) {
-                        // line 36
+                    // line 41
+                    if ((twig_get_attribute($this->env, $this->source, $context["fiches"], "mois", [], "any", false, false, false, 41) == 1)) {
+                        // line 42
                         echo "                                                    <td>Janvier</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 37
-$context["fiches"], "mois", [], "any", false, false, false, 37) == 2)) {
-                        // line 38
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 43
+$context["fiches"], "mois", [], "any", false, false, false, 43) == 2)) {
+                        // line 44
                         echo "                                                    <td>Février</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 39
-$context["fiches"], "mois", [], "any", false, false, false, 39) == 3)) {
-                        // line 40
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 45
+$context["fiches"], "mois", [], "any", false, false, false, 45) == 3)) {
+                        // line 46
                         echo "                                                    <td>Mars</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 41
-$context["fiches"], "mois", [], "any", false, false, false, 41) == 4)) {
-                        // line 42
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 47
+$context["fiches"], "mois", [], "any", false, false, false, 47) == 4)) {
+                        // line 48
                         echo "                                                    <td>Avril</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 43
-$context["fiches"], "mois", [], "any", false, false, false, 43) == 5)) {
-                        // line 44
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 49
+$context["fiches"], "mois", [], "any", false, false, false, 49) == 5)) {
+                        // line 50
                         echo "                                                    <td>Mai</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 45
-$context["fiches"], "mois", [], "any", false, false, false, 45) == 6)) {
-                        // line 46
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 51
+$context["fiches"], "mois", [], "any", false, false, false, 51) == 6)) {
+                        // line 52
                         echo "                                                    <td>Juin</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 47
-$context["fiches"], "mois", [], "any", false, false, false, 47) == 7)) {
-                        // line 48
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 53
+$context["fiches"], "mois", [], "any", false, false, false, 53) == 7)) {
+                        // line 54
                         echo "                                                    <td>Juillet</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 49
-$context["fiches"], "mois", [], "any", false, false, false, 49) == 8)) {
-                        // line 50
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 55
+$context["fiches"], "mois", [], "any", false, false, false, 55) == 8)) {
+                        // line 56
                         echo "                                                    <td>Août</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 51
-$context["fiches"], "mois", [], "any", false, false, false, 51) == 9)) {
-                        // line 52
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 57
+$context["fiches"], "mois", [], "any", false, false, false, 57) == 9)) {
+                        // line 58
                         echo "                                                    <td>Septembre</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 53
-$context["fiches"], "mois", [], "any", false, false, false, 53) == 10)) {
-                        // line 54
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 59
+$context["fiches"], "mois", [], "any", false, false, false, 59) == 10)) {
+                        // line 60
                         echo "                                                    <td>Octobre</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 55
-$context["fiches"], "mois", [], "any", false, false, false, 55) == 11)) {
-                        // line 56
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 61
+$context["fiches"], "mois", [], "any", false, false, false, 61) == 11)) {
+                        // line 62
                         echo "                                                    <td>Novembre</td>
                                                 ";
-                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 57
-$context["fiches"], "mois", [], "any", false, false, false, 57) == 12)) {
-                        // line 58
+                    } elseif ((twig_get_attribute($this->env, $this->source,                     // line 63
+$context["fiches"], "mois", [], "any", false, false, false, 63) == 12)) {
+                        // line 64
                         echo "                                                    <td>Décembre</td>
                                                 ";
                     }
-                    // line 60
+                    // line 66
                     echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "nbJustificatifs", [], "any", false, false, false, 60), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "nbJustificatifs", [], "any", false, false, false, 66), "html", null, true);
                     echo "</td>
                                                 <td>";
-                    // line 61
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "montantValide", [], "any", false, false, false, 61), "html", null, true);
+                    // line 67
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "montantValide", [], "any", false, false, false, 67), "html", null, true);
                     echo "€</td>
                                                 <td>";
-                    // line 62
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "idEtat", [], "any", false, false, false, 62), "html", null, true);
+                    // line 68
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fiches"], "idEtat", [], "any", false, false, false, 68), "html", null, true);
                     echo "</td>
                                             </tr>
                                         ";
                 }
-                // line 65
+                // line 71
                 echo "                                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fiches'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 66
+            // line 72
             echo "                                </tbody>
                             ";
         } else {
-            // line 68
+            // line 74
             echo "                                <tr>
                                     <td>Aucune fiche de frais</td>
                                 </tr>
                             ";
         }
-        // line 72
+        // line 78
         echo "                        </table>
                     </div>
                 </div>
@@ -257,9 +272,9 @@ $context["fiches"], "mois", [], "any", false, false, false, 57) == 12)) {
                     <div class=\"table-responsive\">
                         <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             ";
-        // line 83
-        if (((isset($context["ligne_frais_forfait"]) || array_key_exists("ligne_frais_forfait", $context) ? $context["ligne_frais_forfait"] : (function () { throw new RuntimeError('Variable "ligne_frais_forfait" does not exist.', 83, $this->source); })()) != null)) {
-            // line 84
+        // line 89
+        if (((isset($context["ligne_frais_forfait"]) || array_key_exists("ligne_frais_forfait", $context) ? $context["ligne_frais_forfait"] : (function () { throw new RuntimeError('Variable "ligne_frais_forfait" does not exist.', 89, $this->source); })()) != null)) {
+            // line 90
             echo "                                <thead>
                                     <tr>
                                         <th>Mois</th>
@@ -269,107 +284,107 @@ $context["fiches"], "mois", [], "any", false, false, false, 57) == 12)) {
                                 </thead>
                                 <tbody>
                                     ";
-            // line 92
+            // line 98
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["ligne_frais_forfait"]) || array_key_exists("ligne_frais_forfait", $context) ? $context["ligne_frais_forfait"] : (function () { throw new RuntimeError('Variable "ligne_frais_forfait" does not exist.', 92, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["ligne_frais_forfait"]) || array_key_exists("ligne_frais_forfait", $context) ? $context["ligne_frais_forfait"] : (function () { throw new RuntimeError('Variable "ligne_frais_forfait" does not exist.', 98, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["lignes"]) {
-                // line 93
+                // line 99
                 echo "                                        <tr>
                                             ";
-                // line 94
-                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "mois", [], "any", false, false, false, 94) == 1)) {
-                    // line 95
+                // line 100
+                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "mois", [], "any", false, false, false, 100) == 1)) {
+                    // line 101
                     echo "                                                <td>Janvier</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 96
-$context["lignes"], "mois", [], "any", false, false, false, 96) == 2)) {
-                    // line 97
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 102
+$context["lignes"], "mois", [], "any", false, false, false, 102) == 2)) {
+                    // line 103
                     echo "                                                <td>Février</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 98
-$context["lignes"], "mois", [], "any", false, false, false, 98) == 3)) {
-                    // line 99
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 104
+$context["lignes"], "mois", [], "any", false, false, false, 104) == 3)) {
+                    // line 105
                     echo "                                                <td>Mars</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 100
-$context["lignes"], "mois", [], "any", false, false, false, 100) == 4)) {
-                    // line 101
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 106
+$context["lignes"], "mois", [], "any", false, false, false, 106) == 4)) {
+                    // line 107
                     echo "                                                <td>Avril</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 102
-$context["lignes"], "mois", [], "any", false, false, false, 102) == 5)) {
-                    // line 103
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 108
+$context["lignes"], "mois", [], "any", false, false, false, 108) == 5)) {
+                    // line 109
                     echo "                                                <td>Mai</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 104
-$context["lignes"], "mois", [], "any", false, false, false, 104) == 6)) {
-                    // line 105
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 110
+$context["lignes"], "mois", [], "any", false, false, false, 110) == 6)) {
+                    // line 111
                     echo "                                                <td>Juin</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 106
-$context["lignes"], "mois", [], "any", false, false, false, 106) == 7)) {
-                    // line 107
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 112
+$context["lignes"], "mois", [], "any", false, false, false, 112) == 7)) {
+                    // line 113
                     echo "                                                <td>Juillet</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 108
-$context["lignes"], "mois", [], "any", false, false, false, 108) == 8)) {
-                    // line 109
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 114
+$context["lignes"], "mois", [], "any", false, false, false, 114) == 8)) {
+                    // line 115
                     echo "                                                <td>Août</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 110
-$context["lignes"], "mois", [], "any", false, false, false, 110) == 9)) {
-                    // line 111
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 116
+$context["lignes"], "mois", [], "any", false, false, false, 116) == 9)) {
+                    // line 117
                     echo "                                                <td>Septembre</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 112
-$context["lignes"], "mois", [], "any", false, false, false, 112) == 10)) {
-                    // line 113
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 118
+$context["lignes"], "mois", [], "any", false, false, false, 118) == 10)) {
+                    // line 119
                     echo "                                                <td>Octobre</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 114
-$context["lignes"], "mois", [], "any", false, false, false, 114) == 11)) {
-                    // line 115
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 120
+$context["lignes"], "mois", [], "any", false, false, false, 120) == 11)) {
+                    // line 121
                     echo "                                                <td>Novembre</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 116
-$context["lignes"], "mois", [], "any", false, false, false, 116) == 12)) {
-                    // line 117
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 122
+$context["lignes"], "mois", [], "any", false, false, false, 122) == 12)) {
+                    // line 123
                     echo "                                                <td>Décembre</td>
                                             ";
                 }
-                // line 119
+                // line 125
                 echo "                                            ";
-                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 119) == (isset($context["KM"]) || array_key_exists("KM", $context) ? $context["KM"] : (function () { throw new RuntimeError('Variable "KM" does not exist.', 119, $this->source); })()))) {
-                    // line 120
-                    echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 120), "html", null, true);
-                    echo " (0.62€)</td>
-                                            ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 121
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 121) == (isset($context["ETP"]) || array_key_exists("ETP", $context) ? $context["ETP"] : (function () { throw new RuntimeError('Variable "ETP" does not exist.', 121, $this->source); })()))) {
-                    // line 122
-                    echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 122), "html", null, true);
-                    echo " (110€)</td>
-                                            ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 123
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 123) == (isset($context["NUI"]) || array_key_exists("NUI", $context) ? $context["NUI"] : (function () { throw new RuntimeError('Variable "NUI" does not exist.', 123, $this->source); })()))) {
-                    // line 124
-                    echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 124), "html", null, true);
-                    echo " (80€)</td>
-                                            ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 125
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (isset($context["REP"]) || array_key_exists("REP", $context) ? $context["REP"] : (function () { throw new RuntimeError('Variable "REP" does not exist.', 125, $this->source); })()))) {
+                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (isset($context["KM"]) || array_key_exists("KM", $context) ? $context["KM"] : (function () { throw new RuntimeError('Variable "KM" does not exist.', 125, $this->source); })()))) {
                     // line 126
                     echo "                                                <td>";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 126), "html", null, true);
+                    echo " (0.62€)</td>
+                                            ";
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 127
+$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 127) == (isset($context["ETP"]) || array_key_exists("ETP", $context) ? $context["ETP"] : (function () { throw new RuntimeError('Variable "ETP" does not exist.', 127, $this->source); })()))) {
+                    // line 128
+                    echo "                                                <td>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 128), "html", null, true);
+                    echo " (110€)</td>
+                                            ";
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 129
+$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 129) == (isset($context["NUI"]) || array_key_exists("NUI", $context) ? $context["NUI"] : (function () { throw new RuntimeError('Variable "NUI" does not exist.', 129, $this->source); })()))) {
+                    // line 130
+                    echo "                                                <td>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 130), "html", null, true);
+                    echo " (80€)</td>
+                                            ";
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 131
+$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (isset($context["REP"]) || array_key_exists("REP", $context) ? $context["REP"] : (function () { throw new RuntimeError('Variable "REP" does not exist.', 131, $this->source); })()))) {
+                    // line 132
+                    echo "                                                <td>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 132), "html", null, true);
                     echo " (25 €)</td>
                                             ";
                 }
-                // line 128
+                // line 134
                 echo "                                            <td>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 128), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 134), "html", null, true);
                 echo "</td>
                                         </tr>
                                     ";
@@ -377,17 +392,17 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['lignes'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 131
+            // line 137
             echo "                                </tbody>
                             ";
         } else {
-            // line 133
+            // line 139
             echo "                            <tr>
                                 <td>Aucun frais forfait</td>
                             </tr>
                             ";
         }
-        // line 137
+        // line 143
         echo "                        </table>
                     </div>
                 </div>
@@ -401,9 +416,9 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
                         <div class=\"table-responsive\">
                             <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                                 ";
-        // line 149
-        if (((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 149, $this->source); })()) != null)) {
-            // line 150
+        // line 155
+        if (((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 155, $this->source); })()) != null)) {
+            // line 156
             echo "                                    <thead>
                                         <tr>
                                             <th>Date</th>
@@ -413,23 +428,23 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
                                     </thead>
                                     <tbody>
                                         ";
-            // line 158
+            // line 164
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 158, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 164, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["forfait"]) {
-                // line 159
+                // line 165
                 echo "                                            <tr>
                                                 <td>";
-                // line 160
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "date", [], "any", false, false, false, 160), "html", null, true);
+                // line 166
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "date", [], "any", false, false, false, 166), "html", null, true);
                 echo "</td>
                                                 <td>";
-                // line 161
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "libelle", [], "any", false, false, false, 161), "html", null, true);
+                // line 167
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "libelle", [], "any", false, false, false, 167), "html", null, true);
                 echo "</td>
                                                 <td>";
-                // line 162
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "montant", [], "any", false, false, false, 162), "html", null, true);
+                // line 168
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "montant", [], "any", false, false, false, 168), "html", null, true);
                 echo "€</td>
                                             </tr>
                                         ";
@@ -437,17 +452,17 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['forfait'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 165
+            // line 171
             echo "                                    </tbody>
                                 ";
         } else {
-            // line 167
+            // line 173
             echo "                                    <tr>
                                         <td>Aucun frais hors forfait</td>
                                     </tr>
                                 ";
         }
-        // line 171
+        // line 177
         echo "                            </table>
                         </div>
                     </div>
@@ -464,7 +479,7 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
 
     }
 
-    // line 180
+    // line 186
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -474,20 +489,20 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 181
+        // line 187
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 182
+        // line 188
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatables/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 183
+        // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatables/dataTables.bootstrap4.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 184
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("demo/datatables-demo.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -511,7 +526,7 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
 
     public function getDebugInfo()
     {
-        return array (  491 => 184,  487 => 183,  483 => 182,  478 => 181,  468 => 180,  451 => 171,  445 => 167,  441 => 165,  432 => 162,  428 => 161,  424 => 160,  421 => 159,  417 => 158,  407 => 150,  405 => 149,  391 => 137,  385 => 133,  381 => 131,  371 => 128,  365 => 126,  363 => 125,  358 => 124,  356 => 123,  351 => 122,  349 => 121,  344 => 120,  341 => 119,  337 => 117,  335 => 116,  332 => 115,  330 => 114,  327 => 113,  325 => 112,  322 => 111,  320 => 110,  317 => 109,  315 => 108,  312 => 107,  310 => 106,  307 => 105,  305 => 104,  302 => 103,  300 => 102,  297 => 101,  295 => 100,  292 => 99,  290 => 98,  287 => 97,  285 => 96,  282 => 95,  280 => 94,  277 => 93,  273 => 92,  263 => 84,  261 => 83,  248 => 72,  242 => 68,  238 => 66,  232 => 65,  226 => 62,  222 => 61,  217 => 60,  213 => 58,  211 => 57,  208 => 56,  206 => 55,  203 => 54,  201 => 53,  198 => 52,  196 => 51,  193 => 50,  191 => 49,  188 => 48,  186 => 47,  183 => 46,  181 => 45,  178 => 44,  176 => 43,  173 => 42,  171 => 41,  168 => 40,  166 => 39,  163 => 38,  161 => 37,  158 => 36,  156 => 35,  153 => 34,  150 => 33,  146 => 32,  135 => 23,  133 => 22,  122 => 13,  112 => 12,  99 => 8,  95 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  506 => 190,  502 => 189,  498 => 188,  493 => 187,  483 => 186,  466 => 177,  460 => 173,  456 => 171,  447 => 168,  443 => 167,  439 => 166,  436 => 165,  432 => 164,  422 => 156,  420 => 155,  406 => 143,  400 => 139,  396 => 137,  386 => 134,  380 => 132,  378 => 131,  373 => 130,  371 => 129,  366 => 128,  364 => 127,  359 => 126,  356 => 125,  352 => 123,  350 => 122,  347 => 121,  345 => 120,  342 => 119,  340 => 118,  337 => 117,  335 => 116,  332 => 115,  330 => 114,  327 => 113,  325 => 112,  322 => 111,  320 => 110,  317 => 109,  315 => 108,  312 => 107,  310 => 106,  307 => 105,  305 => 104,  302 => 103,  300 => 102,  297 => 101,  295 => 100,  292 => 99,  288 => 98,  278 => 90,  276 => 89,  263 => 78,  257 => 74,  253 => 72,  247 => 71,  241 => 68,  237 => 67,  232 => 66,  228 => 64,  226 => 63,  223 => 62,  221 => 61,  218 => 60,  216 => 59,  213 => 58,  211 => 57,  208 => 56,  206 => 55,  203 => 54,  201 => 53,  198 => 52,  196 => 51,  193 => 50,  191 => 49,  188 => 48,  186 => 47,  183 => 46,  181 => 45,  178 => 44,  176 => 43,  173 => 42,  171 => 41,  168 => 40,  165 => 39,  161 => 38,  150 => 29,  148 => 28,  136 => 19,  131 => 17,  127 => 16,  122 => 13,  112 => 12,  99 => 8,  95 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -530,6 +545,12 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (i
 {% block body %}
     <div class=\"container-fluid\">
         <div class=\"rowtab\">
+            <div class=\"col-lg-6\">
+                {{ form_start(form) }}
+                    {{ form_row(form.mois) }}
+                    <button type=\"submit\" class=\"btn btn-outline-primary mb-3\">Valider</button>
+                {{ form_end(form) }}
+            </div>
             <div class=\"card shadow mb-4\">
                 <div class=\"card-header py-3\">
                     <h6 class=\"m-0 font-weight-bold text-primary\">Fiche de Frais : </h6>
