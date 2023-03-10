@@ -25,6 +25,8 @@ return [
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\LoginController::logout'], null, null, null, false, false, null]],
         '/renseigner/frais' => [[['_route' => 'app_renseigner_frais', '_controller' => 'App\\Controller\\FicheFraisController::renseigner'], null, null, null, false, false, null]],
         '/visualiser/frais' => [[['_route' => 'app_visu_frais', '_controller' => 'App\\Controller\\FicheFraisController::visualiser'], null, null, null, false, false, null]],
+        '/comptable/choixValidation/frais' => [[['_route' => 'app_choix_validation_frais', '_controller' => 'App\\Controller\\FicheFraisController::choixValidation'], null, null, null, false, false, null]],
+        '/comptable/valider/frais' => [[['_route' => 'app_valider_frais', '_controller' => 'App\\Controller\\FicheFraisController::valider'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

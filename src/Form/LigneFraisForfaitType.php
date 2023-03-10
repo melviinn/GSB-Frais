@@ -48,7 +48,7 @@ class LigneFraisForfaitType extends AbstractType
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Choisissez la période d\'engagement...',
                 ],
-                'label' => 'Période d\'engagement', 
+                'label' => 'Période d\'engagement',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -60,7 +60,7 @@ class LigneFraisForfaitType extends AbstractType
                     'placeholder' => 'Frais Kilométrique (0.62€)',
                     'readonly' => true,
                 ],
-                'label' => 'Libellé', 
+                'label' => 'Libellé',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

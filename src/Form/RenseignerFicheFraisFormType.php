@@ -18,20 +18,6 @@ class RenseignerFicheFraisFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id', TextType::class, [
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez renseigner une valeur',
-                    ]),
-                ],
-                'attr' => [
-                    'class' => 'form-control',
-                ],
-                'label' => 'Id', 
-                'label_attr' => [
-                    'class' => 'form-label mt-4'
-                ]
-            ])
             ->add('idVisiteur', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => function(User $user){
@@ -40,7 +26,7 @@ class RenseignerFicheFraisFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Visiteur', 
+                'label' => 'Visiteur',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -54,7 +40,7 @@ class RenseignerFicheFraisFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Mois', 
+                'label' => 'Mois',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]

@@ -27,4 +27,6 @@ return [
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'app_renseigner_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::renseigner'], [], [['text', '/renseigner/frais']], [], [], []],
     'app_visu_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::visualiser'], [], [['text', '/visualiser/frais']], [], [], []],
+    'app_choix_validation_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::choixValidation'], [], [['text', '/comptable/choixValidation/frais']], [], [], []],
+    'app_valider_frais' => [[], ['_controller' => 'App\\Controller\\FicheFraisController::valider'], [], [['text', '/comptable/valider/frais']], [], [], []],
 ];

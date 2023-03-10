@@ -1,0 +1,127 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Valider{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2-comptable.css') }}" type="text/css">
+    <link rel="stylesheet"href="{{ asset('datatables/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Affichage des Fiches de Frais de l'utilisateur {{ prenomVisiteur }}
+                pour le mois
+                {% if (mois == 1) %}
+                    de Janvier
+                {% elseif (mois == 2) %}
+                    de Février
+                {% elseif (mois == 3) %}
+                    de Mars
+                {% elseif (mois == 4) %}
+                    d'Avril
+                {% elseif (mois == 5) %}
+                    de Mai
+                {% elseif (mois == 6) %}
+                    de Juin
+                {% elseif (mois == 7) %}
+                    de Juillet
+                {% elseif (mois == 8) %}
+                    d'Août
+                {% elseif (mois == 9) %}
+                    de Septembre
+                {% elseif (mois == 10) %}
+                    d'Octobre
+                {% elseif (mois == 11) %}
+                    de Novembre
+                {% elseif (mois == 12) %}
+                    de Décembre
+                {% endif %}
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="card-shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Fiche de Frais :</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            {% if ficheFrais != null %}
+                                <thead>
+                                    <tr>
+                                        <th>Mois</th>
+                                        <th>Nombre de justificatifs</th>
+                                        <th>Montant total</th>
+                                        <th>Date de modification</th>
+                                        <th>Situation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for fiches in ficheFrais %}
+                                        {% if fiches.nbJustificatifs != null %}
+                                            <tr>
+                                                {% if fiches.mois == 1 %}
+                                                    <td>Janvier</td>
+                                                {% elseif fiches.mois == 2 %}
+                                                    <td>Février</td>
+                                                {% elseif fiches.mois == 3 %}
+                                                    <td>Mars</td>
+                                                {% elseif fiches.mois == 4 %}
+                                                    <td>Avril</td>
+                                                {% elseif fiches.mois == 5 %}
+                                                    <td>Mai</td>
+                                                {% elseif fiches.mois == 6 %}
+                                                    <td>Juin</td>
+                                                {% elseif fiches.mois == 7 %}
+                                                    <td>Juillet</td>
+                                                {% elseif fiches.mois == 8 %}
+                                                    <td>Août</td>
+                                                {% elseif fiches.mois == 9 %}
+                                                    <td>Septembre</td>
+                                                {% elseif fiches.mois == 10 %}
+                                                    <td>Octobre</td>
+                                                {% elseif fiches.mois == 11 %}
+                                                    <td>Novembre</td>
+                                                {% elseif fiches.mois == 12 %}
+                                                    <td>Décembre</td>
+                                                {% endif %}
+                                                <td>{{ fiches.nbJustificatifs }}</td>
+                                                <td>{{ fiches.montantValide }}€</td>
+                                                <td>{{ fiches.dateModif }}</td>
+                                                <td>{{ fiches.idEtat }}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            {% else %}
+                                <tr>
+                                    <td>Pas de fiche de frais pour ce visiteur ce mois</td>
+                                </tr>
+                            {% endif %}
+                        </table>
+                    </div>
+                </div>
+                <div class="card-shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Ligne Frais Forfait :</h6>
+                    </div>
+                </div>
+                <div class="card-shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Ligne Frais Hors Forfait :</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('demo/datatables-demo.js') }}"></script>
+{% endblock %}

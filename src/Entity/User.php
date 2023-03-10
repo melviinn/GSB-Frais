@@ -226,8 +226,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function addFicheFrais(FicheFrais $ficheFraisIdVisiteur): self
     {
-        if (!$this->ficheFrais->contains($ficheFraisIdVisiteur)) {
-            $this->ficheFrais->add($ficheFraisIdVisiteur);
+        if (!$this->ficheFraisIdVisiteur->contains($ficheFraisIdVisiteur)) {
+            $this->ficheFraisIdVisiteur->add($ficheFraisIdVisiteur);
             $ficheFraisIdVisiteur->setIdVisiteur($this);
         }
 
@@ -247,6 +247,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     public function __toString() {
-        return $this->prenom;
+        return $this->id;
     }
 }

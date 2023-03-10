@@ -11,6 +11,7 @@ app_home:
     path: /home
     controller: App\Controller\AccueilController::accueilVisiteur
 
+# Accueil comptable #
 app_home_comptable:
     path: /home/comptable
     controller: App\Controller\AccueilController::accueilComptable
@@ -19,14 +20,17 @@ app_home_comptable:
 # LoginController
 #-------------------------
 
+# Formulaire de connexion visiteur #
 app_visiteur:
     path: /
     controller: App\Controller\LoginController::visiteur
 
+# Formulaire de connexion comptable #
 app_comptable:
     path: /comptable
     controller: App\Controller\LoginController::comptable
 
+# Bouton de déconnexion #
 app_logout:
     path: /logout
     controller: App\Controller\LoginController::logout
@@ -35,11 +39,23 @@ app_logout:
 # FicheFraisController
 #-------------------------
 
+# Formulaire de création FicheFrais, FraisHorsForfait #
 app_renseigner_frais:
     path: /renseigner/frais
     controller: App\Controller\FicheFraisController::renseigner
 
+# Tableaux de référencement des FicheFrais, LigneFraisForfait et FraisHorsForfait #
 app_visu_frais:
     path: /visualiser/frais
     controller: App\Controller\FicheFraisController::visualiser
+
+# Formulaire de choix de validation de FicheFrais en fonction du mois et idVisiteur #
+app_choix_validation_frais:
+    path: /comptable/choixValidation/frais
+    controller: App\Controller\FicheFraisController::choixValidation
+
+# Validation des ficheFrais par le comptable #
+app_valider_frais:
+    path: /comptable/valider/frais
+    controller: App\Controller\FicheFraisController::valider
 

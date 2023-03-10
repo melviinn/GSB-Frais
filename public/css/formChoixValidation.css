@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spline Sans';
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+button {
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 20px;
+}
+
+
+
+

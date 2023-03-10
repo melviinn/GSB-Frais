@@ -153,7 +153,7 @@ class __TwigTemplate_43d03cdcd1bd271ca893c01d524ffcff extends Template
                             <div class=\"modal-content\">
                                 <div class=\"modal-header\">
                                     <h5 class=\"modal-title\" id=\"exampleModalLabel\">Voulez-vous vous déconnectez?</h5>
-                                    <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                    <button class=\"close btn btn-outline-primary\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">
                                         <span aria-hidden=\"true\">×</span>
                                     </button>
                                 </div>
@@ -161,8 +161,8 @@ class __TwigTemplate_43d03cdcd1bd271ca893c01d524ffcff extends Template
                                     Selectionnez \"Déconnexion\" si vous êtes prêt à vous déconnectez de votre session.
                                 </div>
                                 <div class=\"modal-footer\">
-                                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
-                                    <a class=\"btn btn-primary\" href=\"";
+                                    <button class=\"btn btn-outline-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
+                                    <a class=\"btn btn-outline-primary\" href=\"";
         // line 102
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
@@ -420,7 +420,7 @@ class __TwigTemplate_43d03cdcd1bd271ca893c01d524ffcff extends Template
                             <div class=\"modal-content\">
                                 <div class=\"modal-header\">
                                     <h5 class=\"modal-title\" id=\"exampleModalLabel\">Voulez-vous vous déconnectez?</h5>
-                                    <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                    <button class=\"close btn btn-outline-primary\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">
                                         <span aria-hidden=\"true\">×</span>
                                     </button>
                                 </div>
@@ -428,8 +428,8 @@ class __TwigTemplate_43d03cdcd1bd271ca893c01d524ffcff extends Template
                                     Selectionnez \"Déconnexion\" si vous êtes prêt à vous déconnectez de votre session.
                                 </div>
                                 <div class=\"modal-footer\">
-                                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
-                                    <a class=\"btn btn-primary\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                                    <button class=\"btn btn-outline-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
+                                    <a class=\"btn btn-outline-primary\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
                                 </div>
                             </div>
                         </div>

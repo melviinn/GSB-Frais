@@ -56,8 +56,10 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
 'App%5CController%5CAccueilController' => 0,
 '[C]App%5CController%5CAccueilController' => 1,
-'App%5CController%5CAccueilController%23index' => 0,
-'[C]App%5CController%5CAccueilController%23index' => 1,
+'App%5CController%5CAccueilController%23accueilVisiteur' => 0,
+'[C]App%5CController%5CAccueilController%23accueilVisiteur' => 1,
+'App%5CController%5CAccueilController%23accueilComptable' => 0,
+'[C]App%5CController%5CAccueilController%23accueilComptable' => 1,
 'App%5CController%5CFicheFraisController' => 0,
 '[C]App%5CController%5CFicheFraisController' => 1,
 'App%5CController%5CFicheFraisController%23renseigner' => 0,
@@ -76,6 +78,8 @@ return [[
 '[C]App%5CController%5CRegistrationController' => 1,
 'App%5CController%5CRegistrationController%23register' => 0,
 '[C]App%5CController%5CRegistrationController%23register' => 1,
+'App%5CController%5CRegistrationController%23registerComptable' => 0,
+'[C]App%5CController%5CRegistrationController%23registerComptable' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
 'App%5CController%5CSecurityController%23login' => 0,
@@ -968,6 +972,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1676541795,
+1 => 1678461055,
 
 ]];

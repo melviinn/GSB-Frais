@@ -1,0 +1,43 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Choix Validation{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2-comptable.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/formChoixValidation.css') }}" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Sélectionnez le visiteur ainsi que le mois affecté à la
+                fiche de frais souhaitant être modifiée</h6>
+            </div>
+            <div class="card-body py-1 mb-2">
+                <form method="post">
+                    <div class="login-box">
+                        <div class="form-login">
+                            {{ form_start(form) }}
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        {{ form_row(form.idVisiteur) }}
+                                    </div>
+                                    <div class="col-sm-5">
+                                        {{ form_row(form.mois)}}
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-primary mb-3">Valider</button>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

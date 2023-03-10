@@ -244,7 +244,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
         echo "
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-outline-primary\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary\">Ajouter</button>
                             ";
         // line 94
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) || array_key_exists("form2", $context) ? $context["form2"] : (function () { throw new RuntimeError('Variable "form2" does not exist.', 94, $this->source); })()), 'form_end');
@@ -402,7 +402,7 @@ class __TwigTemplate_3ab657a600687dc11a3a1c4318564b98 extends Template
                                         {{ form_row(form2.montant) }}
                                     </div>
                                 </div>
-                                <button type=\"submit\" class=\"btn btn-outline-primary\">Créer</button>
+                                <button type=\"submit\" class=\"btn btn-outline-primary\">Ajouter</button>
                             {{ form_end(form2) }}
                         </div>
                     </div>

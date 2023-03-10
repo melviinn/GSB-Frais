@@ -99,7 +99,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
         // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_comptable");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_choix_validation_frais");
         echo "\">
                         <i class=\"fas fa-fw fa-check\"></i>
                         <span>Valider</span>
@@ -161,8 +161,8 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                                     Selectionnez \"Déconnexion\" si vous êtes prêt à vous déconnectez de votre session.
                                 </div>
                                 <div class=\"modal-footer\">
-                                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
-                                    <a class=\"btn btn-primary\" href=\"";
+                                    <button class=\"btn btn-outline-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
+                                    <a class=\"btn btn-outline-primary\" href=\"";
         // line 102
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
@@ -373,7 +373,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 </div>
                 <!-- Nav Item - Renseigner Fiche Frais  -->
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{ path('app_home_comptable') }}\">
+                    <a class=\"nav-link\" href=\"{{ path('app_choix_validation_frais') }}\">
                         <i class=\"fas fa-fw fa-check\"></i>
                         <span>Valider</span>
                     </a>
@@ -428,8 +428,8 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                                     Selectionnez \"Déconnexion\" si vous êtes prêt à vous déconnectez de votre session.
                                 </div>
                                 <div class=\"modal-footer\">
-                                    <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
-                                    <a class=\"btn btn-primary\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                                    <button class=\"btn btn-outline-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
+                                    <a class=\"btn btn-outline-primary\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
                                 </div>
                             </div>
                         </div>
