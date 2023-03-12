@@ -308,7 +308,7 @@ class FicheFraisController extends AbstractController
         $ETP = $fraisForfaitRepository->findOneBy(['id' => 'ETP']);
         $REP = $fraisForfaitRepository->findOneBy(['id' => 'REP']);
 
-        // Si le formulaire est envoyé (si le bouton "Supprimer" est cliqué...
+        // Si le formulaire est envoyé (si le bouton "Supprimer" est cliqué...)
         if (isset($_POST['submit'])) {
             // On récupère le FraisHorsForfait sélectionné et on ajoute "REFUSEE :" au début de son libellé
             $horsForfait = $ligneFraisHorsForfaitRepository->findOneBy(['idVisiteur' => $idVisiteur]);

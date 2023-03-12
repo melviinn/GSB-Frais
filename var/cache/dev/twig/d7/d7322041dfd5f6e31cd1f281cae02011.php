@@ -242,7 +242,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         echo "\" type=\"text/css\">
             <link rel=\"stylesheet\" href=\"";
         // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap/bootstrap.min.css"), "html", null, true);
         echo "\" type=\"text/css\">
             <link rel=\"stylesheet\" href=\"";
         // line 11
@@ -298,7 +298,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
             <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
             <script src=\"";
         // line 127
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.bundle.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
         // line 128
@@ -347,7 +347,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"{{ asset('css/sb-admin-2-comptable.css') }}\" type=\"text/css\">
             <link rel=\"stylesheet\" href=\"{{ asset('css/base.css') }}\" type=\"text/css\">
-            <link rel=\"stylesheet\" href=\"{{ asset('bootstrap.min.css') }}\" type=\"text/css\">
+            <link rel=\"stylesheet\" href=\"{{ asset('bootstrap/bootstrap.min.css') }}\" type=\"text/css\">
             <link rel=\"stylesheet\" href=\"{{ asset('fontawesome/css/all.min.css') }}\" type=\"text/css\">
             <link rel=\"stylesheet\" href=\"{{ asset('datatables/dataTables.bootstrap4.css') }}\" type=\"text/css\">
             <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">
@@ -464,7 +464,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         {% block javascripts %}
             <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
             <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
-            <script src=\"{{ asset('bootstrap.bundle.min.js') }}\"></script>
+            <script src=\"{{ asset('bootstrap/bootstrap.bundle.min.js') }}\"></script>
             <script src=\"{{ asset('js/sb-admin-2.min.js') }}\"></script>
             <script src=\"{{ asset('jquery/jquery.min.js') }}\"></script>
             <script src=\" {{ asset('jquery-easing/jquery.easing.min.js') }}\"></script>

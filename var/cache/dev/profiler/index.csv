@@ -1735,3 +1735,15 @@ c1763a,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/
 e6bc7f,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/frais?idVisiteur=15&mois=1,1678655536,,200
 63931b,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655536,6a69d1,404
 6a69d1,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655536,,404
+d00e41,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/frais?idVisiteur=15&mois=1,1678655919,,200
+009cf2,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655919,a594b8,404
+a594b8,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655919,,404
+0fe5f3,127.0.0.1,GET,http://127.0.0.1:8000/comptable/choixValidation/frais,1678655922,,200
+073d2b,127.0.0.1,POST,http://127.0.0.1:8000/comptable/choixValidation/frais,1678655924,,303
+417049,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/frais?idVisiteur=15&mois=1,1678655924,,200
+63f40c,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655924,830339,404
+830339,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655924,,404
+08d64e,127.0.0.1,POST,http://127.0.0.1:8000/comptable/valider/frais?idVisiteur=15&mois=1,1678655951,,303
+81e3f3,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/frais?idVisiteur=15&mois=1,1678655951,,200
+f953a7,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655951,d3a7d9,404
+d3a7d9,127.0.0.1,GET,http://127.0.0.1:8000/comptable/valider/cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css,1678655951,,404
