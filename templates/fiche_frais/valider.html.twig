@@ -12,8 +12,8 @@
 {% block body %}
     <div class="container-fluid">
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Affichage des Fiches de Frais de l'utilisateur {{ prenomVisiteur }}
+            <div class="card-header py-3" style="display:flex; justify-content: space-between">
+                <h5 class="m-0 font-weight-bold text-primary">Affichage des Fiches de Frais de l'utilisateur {{ prenomVisiteur }}
                 pour le mois
                 {% if (mois == 1) %}
                     de Janvier
@@ -40,7 +40,8 @@
                 {% elseif (mois == 12) %}
                     de Décembre
                 {% endif %}
-                </h6>
+                </h5>
+                <button type="submit" class="btn btn-outline-primary">Modifier / Valider</button>
             </div>
             <div class="card-body">
                 <div class="card-shadow mb-4">
@@ -50,9 +51,8 @@
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             {% if ficheFrais != null %}
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
-                                        <th>Mois</th>
                                         <th>Nombre de justificatifs</th>
                                         <th>Montant total</th>
                                         <th>Date de modification</th>
@@ -63,31 +63,6 @@
                                     {% for fiches in ficheFrais %}
                                         {% if fiches.nbJustificatifs != null %}
                                             <tr>
-                                                {% if fiches.mois == 1 %}
-                                                    <td>Janvier</td>
-                                                {% elseif fiches.mois == 2 %}
-                                                    <td>Février</td>
-                                                {% elseif fiches.mois == 3 %}
-                                                    <td>Mars</td>
-                                                {% elseif fiches.mois == 4 %}
-                                                    <td>Avril</td>
-                                                {% elseif fiches.mois == 5 %}
-                                                    <td>Mai</td>
-                                                {% elseif fiches.mois == 6 %}
-                                                    <td>Juin</td>
-                                                {% elseif fiches.mois == 7 %}
-                                                    <td>Juillet</td>
-                                                {% elseif fiches.mois == 8 %}
-                                                    <td>Août</td>
-                                                {% elseif fiches.mois == 9 %}
-                                                    <td>Septembre</td>
-                                                {% elseif fiches.mois == 10 %}
-                                                    <td>Octobre</td>
-                                                {% elseif fiches.mois == 11 %}
-                                                    <td>Novembre</td>
-                                                {% elseif fiches.mois == 12 %}
-                                                    <td>Décembre</td>
-                                                {% endif %}
                                                 <td>{{ fiches.nbJustificatifs }}</td>
                                                 <td>{{ fiches.montantValide }}€</td>
                                                 <td>{{ fiches.dateModif }}</td>
@@ -106,13 +81,85 @@
                 </div>
                 <div class="card-shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Ligne Frais Forfait :</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Frais au Forfait :</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            {% if ligneFraisForfait != null %}
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Libellé</th>
+                                        <th>Quantité</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for lignes in ligneFraisForfait %}
+                                        <tr>
+                                            {% if lignes.idFraisForfait == KM %}
+                                                <td>{{ lignes.idFraisForfait }} (0.62€)</td>
+                                                <td>{{ lignes.quantite }} km</td>
+                                            {% elseif lignes.idFraisForfait == ETP %}
+                                                <td>{{ lignes.idFraisForfait }} (110€)</td>
+                                                {% if lignes.quantite|length > 1 %}
+                                                    <td>{{ lignes.quantite }} étapes</td>
+                                                {% else %}
+                                                    <td>{{ lignes.quantite }} étape</td>
+                                                {% endif %}
+                                            {% elseif lignes.idFraisForfait == NUI %}
+                                                <td>{{ lignes.idFraisForfait }} (80€)</td>
+                                                {% if lignes.quantite|length > 1 %}
+                                                    <td>{{ lignes.quantite }} nuits</td>
+                                                {% else %}
+                                                    <td>{{ lignes.quantite }} nuit</td>
+                                                {% endif %}
+                                            {% elseif lignes.idFraisForfait == REP %}
+                                                <td>{{ lignes.idFraisForfait }} (25 €)</td>
+                                                <td>{{ lignes.quantite }} repas</td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            {% else %}
+                            <tr>
+                                <td>Aucun frais forfait</td>
+                            </tr>
+                            {% endif %}
+                        </table>
                     </div>
                 </div>
                 <div class="card-shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Ligne Frais Hors Forfait :</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Frais Hors Forfait :</h6>
                     </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            {% if ligneFraisHorsForfait != null %}
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for forfait in ligneFraisHorsForfait %}
+                                        <tr>
+                                            <td>{{ forfait.date }}</td>
+                                            <td>{{ forfait.libelle }}</td>
+                                            <td>{{ forfait.montant }}€</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            {% else %}
+                                <tr>
+                                    <td>Aucun frais hors forfait</td>
+                                </tr>
+                            {% endif %}
+                        </table>
+                    </div>
+                    <form method="POST">
+                        <input type="submit" name="submit" value="Supprimer le Hors Forfait" class="btn btn-outline-primary"></input>
+                    </form>
                 </div>
             </div>
         </div>

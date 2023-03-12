@@ -213,6 +213,7 @@ class FicheFraisController extends AbstractController
             $entityManager->persist($ligneFraisHorsForfait);
             $entityManager->flush();
 
+
             // On redirige après validation du formulaire
             return $this->redirectToRoute('app_renseigner_frais', [], Response::HTTP_SEE_OTHER);
         }
@@ -248,6 +249,7 @@ class FicheFraisController extends AbstractController
         $hors_forfait = $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $userId]);
         $ligne_frais_forfait = $ligneFraisForfaitRepository->findBy(['idVisiteur' => $userId, 'mois' => $mois]);
         $fiche_frais = $ficheFraisRepository->findBy(['idVisiteur' => $userId, 'mois' => $mois]);
+
         $KM = $fraisForfaitRepository->findOneBy(['id' => 'KM']);
         $NUI = $fraisForfaitRepository->findOneBy(['id' => 'NUI']);
         $ETP = $fraisForfaitRepository->findOneBy(['id' => 'ETP']);
@@ -286,7 +288,8 @@ class FicheFraisController extends AbstractController
     }
 
     public function valider(Request $request, FicheFraisRepository $ficheFraisRepository, LigneFraisForfaitRepository $ligneFraisForfaitRepository,
-    LigneFraisForfaitRepository $ligneFraisHorsForfaitRepository, UserRepository $userRepository): Response
+    LigneFraisHorsForfaitRepository $ligneFraisHorsForfaitRepository, FraisForfaitRepository $fraisForfaitRepository, UserRepository $userRepository,
+    EntityManagerInterface $em): Response
     {
         // On récupère les données du formulaire précédent
         $mois = $request->get('mois');
@@ -298,12 +301,35 @@ class FicheFraisController extends AbstractController
         $ligneFraisForfait = $ligneFraisForfaitRepository->findBy(['idVisiteur' => $idVisiteur, 'mois' => $mois]);
         $ligneFraisHorsForfait = $ligneFraisHorsForfaitRepository->findBy(['idVisiteur' => $idVisiteur]);
 
+        $horsForfaitId = $ligneFraisHorsForfaitRepository->findOneBy(['idVisiteur' => $idVisiteur])->getId();
+
+        $KM = $fraisForfaitRepository->findOneBy(['id' => 'KM']);
+        $NUI = $fraisForfaitRepository->findOneBy(['id' => 'NUI']);
+        $ETP = $fraisForfaitRepository->findOneBy(['id' => 'ETP']);
+        $REP = $fraisForfaitRepository->findOneBy(['id' => 'REP']);
+
+        // Si le formulaire est envoyé (si le bouton "Supprimer" est cliqué...
+        if (isset($_POST['submit'])) {
+            // On récupère le FraisHorsForfait sélectionné et on ajoute "REFUSEE :" au début de son libellé
+            $horsForfait = $ligneFraisHorsForfaitRepository->findOneBy(['idVisiteur' => $idVisiteur]);
+            $horsForfait->setLibelle("REFUSEE : " . $horsForfait->getLibelle());
+            $em->persist($horsForfait);
+            $em->flush();
+
+            // On redirige après validation afin d'éviter l'envoi du formulaire au reload de la page
+            return $this->redirectToRoute('app_valider_frais', ['mois' => $mois, 'idVisiteur' => $idVisiteur], Response::HTTP_SEE_OTHER);
+        }
+
         return $this->render('fiche_frais/valider.html.twig', [
             'ficheFrais' => $ficheFrais,
             'ligneFraisForfait' => $ligneFraisForfait,
             'ligneFraisHorsForfait' => $ligneFraisHorsForfait,
             'mois' => $mois,
-            'prenomVisiteur' => $prenomVisiteur
+            'prenomVisiteur' => $prenomVisiteur,
+            'KM' => $KM,
+            'NUI' => $NUI,
+            'ETP' => $ETP,
+            'REP' => $REP
         ]);
     }
 }

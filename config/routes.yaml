@@ -30,7 +30,7 @@ app_comptable:
     path: /comptable
     controller: App\Controller\LoginController::comptable
 
-# Bouton de déconnexion #
+# Fonction de déconnexion #
 app_logout:
     path: /logout
     controller: App\Controller\LoginController::logout
@@ -39,23 +39,22 @@ app_logout:
 # FicheFraisController
 #-------------------------
 
-# Formulaire de création FicheFrais, FraisHorsForfait #
+# Formulaire de création FicheFrais, FraisForfait et FraisHorsForfait #
 app_renseigner_frais:
     path: /renseigner/frais
     controller: App\Controller\FicheFraisController::renseigner
 
-# Tableaux de référencement des FicheFrais, LigneFraisForfait et FraisHorsForfait #
+# Tableaux de référencement des FicheFrais, FraisForfait et FraisHorsForfait #
 app_visu_frais:
     path: /visualiser/frais
     controller: App\Controller\FicheFraisController::visualiser
 
-# Formulaire de choix de validation de FicheFrais en fonction du mois et idVisiteur #
+# Formulaire de choix des informations des FicheFrais en fonction du mois et idVisiteur #
 app_choix_validation_frais:
     path: /comptable/choixValidation/frais
     controller: App\Controller\FicheFraisController::choixValidation
 
-# Validation des ficheFrais par le comptable #
+# Validation des FicheFrais #
 app_valider_frais:
     path: /comptable/valider/frais
     controller: App\Controller\FicheFraisController::valider
-

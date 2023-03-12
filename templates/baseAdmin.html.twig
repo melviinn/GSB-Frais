@@ -33,7 +33,8 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('app_home_comptable') }}">
                         <i class="fas fa-home"></i>
-                        <span>Accueil</span></a>
+                        <span>Accueil</span>
+                    </a>
                 </li>
                 <!-- Diviseur -->
                 <hr class="sidebar-divider">
@@ -110,6 +111,15 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+            $('.navbar-nav>li').click(function() {
+                $('.active').toggleClass("active");
+                $(this).toggleClass("active");
+            });
+
+        </script>
 
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

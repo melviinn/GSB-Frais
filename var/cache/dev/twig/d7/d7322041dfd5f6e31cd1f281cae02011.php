@@ -87,7 +87,8 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_comptable");
         echo "\">
                         <i class=\"fas fa-home\"></i>
-                        <span>Accueil</span></a>
+                        <span>Accueil</span>
+                    </a>
                 </li>
                 <!-- Diviseur -->
                 <hr class=\"sidebar-divider\">
@@ -98,7 +99,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 <!-- Nav Item - Renseigner Fiche Frais  -->
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 46
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_choix_validation_frais");
         echo "\">
                         <i class=\"fas fa-fw fa-check\"></i>
@@ -108,7 +109,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 <!-- Nav Item - Afficher Fiche Frais  -->
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 53
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_comptable");
         echo "\">
                         <i class=\"fas fa-fw fa-eye\"></i>
@@ -132,8 +133,8 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                             <li class=\"nav-item dropdown no-arrow\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                     <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
-        // line 74
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 74, $this->source); })()), "user", [], "any", false, false, false, 74), "login", [], "any", false, false, false, 74), "html", null, true);
+        // line 75
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 75, $this->source); })()), "user", [], "any", false, false, false, 75), "login", [], "any", false, false, false, 75), "html", null, true);
         echo "</span>
                                     <i class=\"fas fa-user\"></i>
                                 </a>
@@ -163,7 +164,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                                 <div class=\"modal-footer\">
                                     <button class=\"btn btn-outline-secondary\" type=\"button\" data-dismiss=\"modal\">Annuler</button>
                                     <a class=\"btn btn-outline-primary\" href=\"";
-        // line 102
+        // line 103
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
                                 </div>
@@ -171,17 +172,26 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                         </div>
                     </div>
                     ";
-        // line 107
+        // line 108
         $this->displayBlock('body', $context, $blocks);
-        // line 110
+        // line 111
         echo "                </div>
             </div>
         </div>
 
+        <script>
+
+            \$('.navbar-nav>li').click(function() {
+                \$('.active').toggleClass(\"active\");
+                \$(this).toggleClass(\"active\");
+            });
+
+        </script>
+
         ";
-        // line 114
+        // line 124
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 122
+        // line 132
         echo "    </body>
 </html>
 ";
@@ -252,7 +262,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
 
     }
 
-    // line 107
+    // line 108
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -262,7 +272,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 108
+        // line 109
         echo "                    <!-- Main Content -->
                     ";
         
@@ -273,7 +283,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
 
     }
 
-    // line 114
+    // line 124
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -283,23 +293,23 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 115
+        // line 125
         echo "            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
             <script src=\"https://kit.fontawesome.com/8662a536ba.js\" crossorigin=\"anonymous\"></script>
             <script src=\"";
-        // line 117
+        // line 127
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 118
+        // line 128
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 119
+        // line 129
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\" ";
-        // line 120
+        // line 130
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -323,7 +333,7 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
 
     public function getDebugInfo()
     {
-        return array (  303 => 120,  299 => 119,  295 => 118,  291 => 117,  287 => 115,  277 => 114,  266 => 108,  256 => 107,  243 => 12,  239 => 11,  235 => 10,  231 => 9,  226 => 8,  216 => 7,  197 => 5,  185 => 122,  183 => 114,  177 => 110,  175 => 107,  167 => 102,  136 => 74,  112 => 53,  102 => 46,  87 => 34,  74 => 24,  63 => 15,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  313 => 130,  309 => 129,  305 => 128,  301 => 127,  297 => 125,  287 => 124,  276 => 109,  266 => 108,  253 => 12,  249 => 11,  245 => 10,  241 => 9,  236 => 8,  226 => 7,  207 => 5,  195 => 132,  193 => 124,  178 => 111,  176 => 108,  168 => 103,  137 => 75,  113 => 54,  103 => 47,  87 => 34,  74 => 24,  63 => 15,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -363,7 +373,8 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"{{ path('app_home_comptable') }}\">
                         <i class=\"fas fa-home\"></i>
-                        <span>Accueil</span></a>
+                        <span>Accueil</span>
+                    </a>
                 </li>
                 <!-- Diviseur -->
                 <hr class=\"sidebar-divider\">
@@ -440,6 +451,15 @@ class __TwigTemplate_78a676364fab4a0a20aeccab1724952d extends Template
                 </div>
             </div>
         </div>
+
+        <script>
+
+            \$('.navbar-nav>li').click(function() {
+                \$('.active').toggleClass(\"active\");
+                \$(this).toggleClass(\"active\");
+            });
+
+        </script>
 
         {% block javascripts %}
             <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>

@@ -23,10 +23,10 @@
                     <h6 class="m-0 font-weight-bold text-primary">Fiche de Frais : </h6>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div class="table-responsive-lg">
+                        <table class="table table-bordered table-responsive-lg" id="dataTable" width="100%" cellspacing="0">
                             {% if fiche_frais != null %}
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
                                         <th>Mois</th>
                                         <th>Nombre de justificatifs</th>
@@ -84,10 +84,10 @@
                     <h6 class="m-0 font-weight-bold text-primary">Frais au Forfait :</h6>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div class="table-responsive-lg">
+                        <table class="table table-bordered table-responsive-lg" id="dataTable" width="100%" cellspacing="0">
                             {% if ligne_frais_forfait != null %}
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
                                         <th>Mois</th>
                                         <th>Libellé</th>
@@ -122,16 +122,19 @@
                                             {% elseif lignes.mois == 12 %}
                                                 <td>Décembre</td>
                                             {% endif %}
-                                            {% if lignes.IdFraisForfait == KM %}
-                                                <td>{{ lignes.IdFraisForfait }} (0.62€)</td>
-                                            {% elseif lignes.IdFraisForfait == ETP %}
-                                                <td>{{ lignes.IdFraisForfait }} (110€)</td>
-                                            {% elseif lignes.IdFraisForfait == NUI %}
-                                                <td>{{ lignes.IdFraisForfait }} (80€)</td>
-                                            {% elseif lignes.IdFraisForfait == REP %}
-                                                <td>{{ lignes.IdFraisForfait }} (25 €)</td>
+                                            {% if lignes.idFraisForfait == KM %}
+                                                <td>{{ lignes.idFraisForfait }} (0.62€)</td>
+                                                <td>{{ lignes.quantite }}km</td>
+                                            {% elseif lignes.idFraisForfait == ETP %}
+                                                <td>{{ lignes.idFraisForfait }} (110€)</td>
+                                                <td>{{ lignes.quantite }} étape(s)</td>
+                                            {% elseif lignes.idFraisForfait == NUI %}
+                                                <td>{{ lignes.idFraisForfait }} (80€)</td>
+                                                <td>{{ lignes.quantite }} repas</td>
+                                            {% elseif lignes.idFraisForfait == REP %}
+                                                <td>{{ lignes.idFraisForfait }} (25 €)</td>
+                                                <td>{{ lignes.quantite }} nuit(s)</td>
                                             {% endif %}
-                                            <td>{{ lignes.quantite }}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
@@ -149,33 +152,32 @@
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Hors Forfait : </h6>
                 </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                {% if hors_forfait != null %}
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Libellé</th>
-                                            <th>Montant</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for forfait in hors_forfait %}
-                                            <tr>
-                                                <td>{{ forfait.date }}</td>
-                                                <td>{{ forfait.libelle }}</td>
-                                                <td>{{ forfait.montant }}€</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                {% else %}
+                <div class="card-body">
+                    <div class="table-responsive-lg">
+                        <table class="table table-bordered table-responsive-lg" id="dataTable" width="100%" cellspacing="0">
+                            {% if hors_forfait != null %}
+                                <thead class="thead-light">
                                     <tr>
-                                        <td>Aucun frais hors forfait</td>
+                                        <th>Date</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
                                     </tr>
-                                {% endif %}
-                            </table>
-                        </div>
+                                </thead>
+                                <tbody>
+                                    {% for forfait in hors_forfait %}
+                                        <tr>
+                                            <td>{{ forfait.date }}</td>
+                                            <td>{{ forfait.libelle }}</td>
+                                            <td>{{ forfait.montant }}€</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            {% else %}
+                                <tr>
+                                    <td>Aucun frais hors forfait</td>
+                                </tr>
+                            {% endif %}
+                        </table>
                     </div>
                 </div>
             </div>

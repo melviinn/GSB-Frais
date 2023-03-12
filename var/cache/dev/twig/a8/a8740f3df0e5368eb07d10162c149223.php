@@ -141,8 +141,8 @@ class __TwigTemplate_bd62a5e39085650f3f1e7c755c4e1f03 extends Template
                     <h6 class=\"m-0 font-weight-bold text-primary\">Fiche de Frais : </h6>
                 </div>
                 <div class=\"card-body\">
-                    <div class=\"table-responsive\">
-                        <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             ";
         // line 28
         if (((isset($context["fiche_frais"]) || array_key_exists("fiche_frais", $context) ? $context["fiche_frais"] : (function () { throw new RuntimeError('Variable "fiche_frais" does not exist.', 28, $this->source); })()) != null)) {
@@ -269,8 +269,8 @@ $context["fiches"], "mois", [], "any", false, false, false, 63) == 12)) {
                     <h6 class=\"m-0 font-weight-bold text-primary\">Frais au Forfait :</h6>
                 </div>
                 <div class=\"card-body\">
-                    <div class=\"table-responsive\">
-                        <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             ";
         // line 89
         if (((isset($context["ligne_frais_forfait"]) || array_key_exists("ligne_frais_forfait", $context) ? $context["ligne_frais_forfait"] : (function () { throw new RuntimeError('Variable "ligne_frais_forfait" does not exist.', 89, $this->source); })()) != null)) {
@@ -354,55 +354,68 @@ $context["lignes"], "mois", [], "any", false, false, false, 122) == 12)) {
                 }
                 // line 125
                 echo "                                            ";
-                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 125) == (isset($context["KM"]) || array_key_exists("KM", $context) ? $context["KM"] : (function () { throw new RuntimeError('Variable "KM" does not exist.', 125, $this->source); })()))) {
+                if ((twig_get_attribute($this->env, $this->source, $context["lignes"], "idFraisForfait", [], "any", false, false, false, 125) == (isset($context["KM"]) || array_key_exists("KM", $context) ? $context["KM"] : (function () { throw new RuntimeError('Variable "KM" does not exist.', 125, $this->source); })()))) {
                     // line 126
                     echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 126), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "idFraisForfait", [], "any", false, false, false, 126), "html", null, true);
                     echo " (0.62€)</td>
+                                                <td>";
+                    // line 127
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 127), "html", null, true);
+                    echo "km</td>
                                             ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 127
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 127) == (isset($context["ETP"]) || array_key_exists("ETP", $context) ? $context["ETP"] : (function () { throw new RuntimeError('Variable "ETP" does not exist.', 127, $this->source); })()))) {
-                    // line 128
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 128
+$context["lignes"], "idFraisForfait", [], "any", false, false, false, 128) == (isset($context["ETP"]) || array_key_exists("ETP", $context) ? $context["ETP"] : (function () { throw new RuntimeError('Variable "ETP" does not exist.', 128, $this->source); })()))) {
+                    // line 129
                     echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 128), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "idFraisForfait", [], "any", false, false, false, 129), "html", null, true);
                     echo " (110€)</td>
-                                            ";
-                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 129
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 129) == (isset($context["NUI"]) || array_key_exists("NUI", $context) ? $context["NUI"] : (function () { throw new RuntimeError('Variable "NUI" does not exist.', 129, $this->source); })()))) {
+                                                <td>";
                     // line 130
-                    echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 130), "html", null, true);
-                    echo " (80€)</td>
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 130), "html", null, true);
+                    echo " étape(s)</td>
                                             ";
                 } elseif ((twig_get_attribute($this->env, $this->source,                 // line 131
-$context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (isset($context["REP"]) || array_key_exists("REP", $context) ? $context["REP"] : (function () { throw new RuntimeError('Variable "REP" does not exist.', 131, $this->source); })()))) {
+$context["lignes"], "idFraisForfait", [], "any", false, false, false, 131) == (isset($context["NUI"]) || array_key_exists("NUI", $context) ? $context["NUI"] : (function () { throw new RuntimeError('Variable "NUI" does not exist.', 131, $this->source); })()))) {
                     // line 132
                     echo "                                                <td>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 132), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "idFraisForfait", [], "any", false, false, false, 132), "html", null, true);
+                    echo " (80€)</td>
+                                                <td>";
+                    // line 133
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 133), "html", null, true);
+                    echo " repas</td>
+                                            ";
+                } elseif ((twig_get_attribute($this->env, $this->source,                 // line 134
+$context["lignes"], "idFraisForfait", [], "any", false, false, false, 134) == (isset($context["REP"]) || array_key_exists("REP", $context) ? $context["REP"] : (function () { throw new RuntimeError('Variable "REP" does not exist.', 134, $this->source); })()))) {
+                    // line 135
+                    echo "                                                <td>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "idFraisForfait", [], "any", false, false, false, 135), "html", null, true);
                     echo " (25 €)</td>
+                                                <td>";
+                    // line 136
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 136), "html", null, true);
+                    echo " nuit(s)</td>
                                             ";
                 }
-                // line 134
-                echo "                                            <td>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["lignes"], "quantite", [], "any", false, false, false, 134), "html", null, true);
-                echo "</td>
-                                        </tr>
+                // line 138
+                echo "                                        </tr>
                                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['lignes'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 137
+            // line 140
             echo "                                </tbody>
                             ";
         } else {
-            // line 139
+            // line 142
             echo "                            <tr>
                                 <td>Aucun frais forfait</td>
                             </tr>
                             ";
         }
-        // line 143
+        // line 146
         echo "                        </table>
                     </div>
                 </div>
@@ -412,59 +425,58 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
                 <div class=\"card-header py-3\">
                     <h6 class=\"m-0 font-weight-bold text-primary\">Hors Forfait : </h6>
                 </div>
-                    <div class=\"card-body\">
-                        <div class=\"table-responsive\">
-                            <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
-                                ";
-        // line 155
-        if (((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 155, $this->source); })()) != null)) {
-            // line 156
-            echo "                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Libellé</th>
-                                            <th>Montant</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ";
-            // line 164
+                <div class=\"card-body\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                            ";
+        // line 158
+        if (((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 158, $this->source); })()) != null)) {
+            // line 159
+            echo "                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ";
+            // line 167
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 164, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["hors_forfait"]) || array_key_exists("hors_forfait", $context) ? $context["hors_forfait"] : (function () { throw new RuntimeError('Variable "hors_forfait" does not exist.', 167, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["forfait"]) {
-                // line 165
-                echo "                                            <tr>
-                                                <td>";
-                // line 166
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "date", [], "any", false, false, false, 166), "html", null, true);
-                echo "</td>
-                                                <td>";
-                // line 167
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "libelle", [], "any", false, false, false, 167), "html", null, true);
-                echo "</td>
-                                                <td>";
                 // line 168
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "montant", [], "any", false, false, false, 168), "html", null, true);
+                echo "                                        <tr>
+                                            <td>";
+                // line 169
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "date", [], "any", false, false, false, 169), "html", null, true);
+                echo "</td>
+                                            <td>";
+                // line 170
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "libelle", [], "any", false, false, false, 170), "html", null, true);
+                echo "</td>
+                                            <td>";
+                // line 171
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["forfait"], "montant", [], "any", false, false, false, 171), "html", null, true);
                 echo "€</td>
-                                            </tr>
-                                        ";
+                                        </tr>
+                                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['forfait'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 171
-            echo "                                    </tbody>
-                                ";
+            // line 174
+            echo "                                </tbody>
+                            ";
         } else {
-            // line 173
-            echo "                                    <tr>
-                                        <td>Aucun frais hors forfait</td>
-                                    </tr>
-                                ";
+            // line 176
+            echo "                                <tr>
+                                    <td>Aucun frais hors forfait</td>
+                                </tr>
+                            ";
         }
-        // line 177
-        echo "                            </table>
-                        </div>
+        // line 180
+        echo "                        </table>
                     </div>
                 </div>
             </div>
@@ -479,7 +491,7 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
 
     }
 
-    // line 186
+    // line 188
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -489,20 +501,20 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 187
+        // line 189
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 188
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatables/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 189
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatables/dataTables.bootstrap4.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 190
+        // line 192
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("demo/datatables-demo.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -526,7 +538,7 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
 
     public function getDebugInfo()
     {
-        return array (  506 => 190,  502 => 189,  498 => 188,  493 => 187,  483 => 186,  466 => 177,  460 => 173,  456 => 171,  447 => 168,  443 => 167,  439 => 166,  436 => 165,  432 => 164,  422 => 156,  420 => 155,  406 => 143,  400 => 139,  396 => 137,  386 => 134,  380 => 132,  378 => 131,  373 => 130,  371 => 129,  366 => 128,  364 => 127,  359 => 126,  356 => 125,  352 => 123,  350 => 122,  347 => 121,  345 => 120,  342 => 119,  340 => 118,  337 => 117,  335 => 116,  332 => 115,  330 => 114,  327 => 113,  325 => 112,  322 => 111,  320 => 110,  317 => 109,  315 => 108,  312 => 107,  310 => 106,  307 => 105,  305 => 104,  302 => 103,  300 => 102,  297 => 101,  295 => 100,  292 => 99,  288 => 98,  278 => 90,  276 => 89,  263 => 78,  257 => 74,  253 => 72,  247 => 71,  241 => 68,  237 => 67,  232 => 66,  228 => 64,  226 => 63,  223 => 62,  221 => 61,  218 => 60,  216 => 59,  213 => 58,  211 => 57,  208 => 56,  206 => 55,  203 => 54,  201 => 53,  198 => 52,  196 => 51,  193 => 50,  191 => 49,  188 => 48,  186 => 47,  183 => 46,  181 => 45,  178 => 44,  176 => 43,  173 => 42,  171 => 41,  168 => 40,  165 => 39,  161 => 38,  150 => 29,  148 => 28,  136 => 19,  131 => 17,  127 => 16,  122 => 13,  112 => 12,  99 => 8,  95 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  518 => 192,  514 => 191,  510 => 190,  505 => 189,  495 => 188,  479 => 180,  473 => 176,  469 => 174,  460 => 171,  456 => 170,  452 => 169,  449 => 168,  445 => 167,  435 => 159,  433 => 158,  419 => 146,  413 => 142,  409 => 140,  402 => 138,  397 => 136,  392 => 135,  390 => 134,  386 => 133,  381 => 132,  379 => 131,  375 => 130,  370 => 129,  368 => 128,  364 => 127,  359 => 126,  356 => 125,  352 => 123,  350 => 122,  347 => 121,  345 => 120,  342 => 119,  340 => 118,  337 => 117,  335 => 116,  332 => 115,  330 => 114,  327 => 113,  325 => 112,  322 => 111,  320 => 110,  317 => 109,  315 => 108,  312 => 107,  310 => 106,  307 => 105,  305 => 104,  302 => 103,  300 => 102,  297 => 101,  295 => 100,  292 => 99,  288 => 98,  278 => 90,  276 => 89,  263 => 78,  257 => 74,  253 => 72,  247 => 71,  241 => 68,  237 => 67,  232 => 66,  228 => 64,  226 => 63,  223 => 62,  221 => 61,  218 => 60,  216 => 59,  213 => 58,  211 => 57,  208 => 56,  206 => 55,  203 => 54,  201 => 53,  198 => 52,  196 => 51,  193 => 50,  191 => 49,  188 => 48,  186 => 47,  183 => 46,  181 => 45,  178 => 44,  176 => 43,  173 => 42,  171 => 41,  168 => 40,  165 => 39,  161 => 38,  150 => 29,  148 => 28,  136 => 19,  131 => 17,  127 => 16,  122 => 13,  112 => 12,  99 => 8,  95 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -556,8 +568,8 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
                     <h6 class=\"m-0 font-weight-bold text-primary\">Fiche de Frais : </h6>
                 </div>
                 <div class=\"card-body\">
-                    <div class=\"table-responsive\">
-                        <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             {% if fiche_frais != null %}
                                 <thead>
                                     <tr>
@@ -617,8 +629,8 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
                     <h6 class=\"m-0 font-weight-bold text-primary\">Frais au Forfait :</h6>
                 </div>
                 <div class=\"card-body\">
-                    <div class=\"table-responsive\">
-                        <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
                             {% if ligne_frais_forfait != null %}
                                 <thead>
                                     <tr>
@@ -655,16 +667,19 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
                                             {% elseif lignes.mois == 12 %}
                                                 <td>Décembre</td>
                                             {% endif %}
-                                            {% if lignes.IdFraisForfait == KM %}
-                                                <td>{{ lignes.IdFraisForfait }} (0.62€)</td>
-                                            {% elseif lignes.IdFraisForfait == ETP %}
-                                                <td>{{ lignes.IdFraisForfait }} (110€)</td>
-                                            {% elseif lignes.IdFraisForfait == NUI %}
-                                                <td>{{ lignes.IdFraisForfait }} (80€)</td>
-                                            {% elseif lignes.IdFraisForfait == REP %}
-                                                <td>{{ lignes.IdFraisForfait }} (25 €)</td>
+                                            {% if lignes.idFraisForfait == KM %}
+                                                <td>{{ lignes.idFraisForfait }} (0.62€)</td>
+                                                <td>{{ lignes.quantite }}km</td>
+                                            {% elseif lignes.idFraisForfait == ETP %}
+                                                <td>{{ lignes.idFraisForfait }} (110€)</td>
+                                                <td>{{ lignes.quantite }} étape(s)</td>
+                                            {% elseif lignes.idFraisForfait == NUI %}
+                                                <td>{{ lignes.idFraisForfait }} (80€)</td>
+                                                <td>{{ lignes.quantite }} repas</td>
+                                            {% elseif lignes.idFraisForfait == REP %}
+                                                <td>{{ lignes.idFraisForfait }} (25 €)</td>
+                                                <td>{{ lignes.quantite }} nuit(s)</td>
                                             {% endif %}
-                                            <td>{{ lignes.quantite }}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
@@ -682,33 +697,32 @@ $context["lignes"], "IdFraisForfait", [], "any", false, false, false, 131) == (i
                 <div class=\"card-header py-3\">
                     <h6 class=\"m-0 font-weight-bold text-primary\">Hors Forfait : </h6>
                 </div>
-                    <div class=\"card-body\">
-                        <div class=\"table-responsive\">
-                            <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
-                                {% if hors_forfait != null %}
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Libellé</th>
-                                            <th>Montant</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for forfait in hors_forfait %}
-                                            <tr>
-                                                <td>{{ forfait.date }}</td>
-                                                <td>{{ forfait.libelle }}</td>
-                                                <td>{{ forfait.montant }}€</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                {% else %}
+                <div class=\"card-body\">
+                    <div class=\"table-responsive-lg\">
+                        <table class=\"table table-bordered table-responsive-lg\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">
+                            {% if hors_forfait != null %}
+                                <thead>
                                     <tr>
-                                        <td>Aucun frais hors forfait</td>
+                                        <th>Date</th>
+                                        <th>Libellé</th>
+                                        <th>Montant</th>
                                     </tr>
-                                {% endif %}
-                            </table>
-                        </div>
+                                </thead>
+                                <tbody>
+                                    {% for forfait in hors_forfait %}
+                                        <tr>
+                                            <td>{{ forfait.date }}</td>
+                                            <td>{{ forfait.libelle }}</td>
+                                            <td>{{ forfait.montant }}€</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            {% else %}
+                                <tr>
+                                    <td>Aucun frais hors forfait</td>
+                                </tr>
+                            {% endif %}
+                        </table>
                     </div>
                 </div>
             </div>

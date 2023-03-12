@@ -4629,12 +4629,14 @@
         <argument key="ligneFraisHorsForfaitRepository" type="service_closure" id="App\Repository\LigneFraisHorsForfaitRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.XUyvr4Q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.RRxxsY4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="ficheFraisRepository" type="service_closure" id="App\Repository\FicheFraisRepository"/>
+        <argument key="fraisForfaitRepository" type="service_closure" id="App\Repository\FraisForfaitRepository"/>
         <argument key="ligneFraisForfaitRepository" type="service_closure" id="App\Repository\LigneFraisForfaitRepository"/>
-        <argument key="ligneFraisHorsForfaitRepository" type="service_closure" id="App\Repository\LigneFraisForfaitRepository"/>
+        <argument key="ligneFraisHorsForfaitRepository" type="service_closure" id="App\Repository\LigneFraisHorsForfaitRepository"/>
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -4661,11 +4663,11 @@
         <argument key="compt" type="service_closure" id=".errored..service_locator.ysmFcWQ.App\Entity\Comptable"/>
       </argument>
     </service>
-    <service id=".service_locator.mxcDQhV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kwPFVMU" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\FicheFraisController::renseigner" type="service_closure" id=".service_locator.Wbb3jTR"/>
-        <argument key="App\Controller\FicheFraisController::valider" type="service_closure" id=".service_locator.XUyvr4Q"/>
+        <argument key="App\Controller\FicheFraisController::valider" type="service_closure" id=".service_locator.RRxxsY4"/>
         <argument key="App\Controller\FicheFraisController::visualiser" type="service_closure" id=".service_locator.UIbAps0"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.kXtg5m1"/>
         <argument key="App\Controller\RegistrationController::registerComptable" type="service_closure" id=".service_locator.kXtg5m1"/>
@@ -4676,7 +4678,7 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Controller\FicheFraisController:renseigner" type="service_closure" id=".service_locator.Wbb3jTR"/>
-        <argument key="App\Controller\FicheFraisController:valider" type="service_closure" id=".service_locator.XUyvr4Q"/>
+        <argument key="App\Controller\FicheFraisController:valider" type="service_closure" id=".service_locator.RRxxsY4"/>
         <argument key="App\Controller\FicheFraisController:visualiser" type="service_closure" id=".service_locator.UIbAps0"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.kXtg5m1"/>
         <argument key="App\Controller\RegistrationController:registerComptable" type="service_closure" id=".service_locator.kXtg5m1"/>
@@ -5013,12 +5015,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.mxcDQhV"/>
+      <argument type="service" id=".service_locator.kwPFVMU"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.mxcDQhV"/>
+      <argument type="service" id=".service_locator.kwPFVMU"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5779,7 +5781,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.mxcDQhV"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.kwPFVMU"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
@@ -5787,8 +5789,9 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.NCbQ3mm" alias=".service_locator.Wbb3jTR"/>
     <service id=".service_locator.W99jTlO" alias=".service_locator.UIbAps0"/>
+    <service id=".service_locator.mQ2nsNK" alias=".service_locator.RRxxsY4"/>
     <service id=".service_locator.IJyWPwb" alias=".service_locator.kXtg5m1"/>
-    <service id=".service_locator.sLhmKrt" alias=".service_locator.mxcDQhV"/>
+    <service id=".service_locator.lePU.ZY" alias=".service_locator.kwPFVMU"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.KyNQDaQ" alias=".service_locator.bPbqrxR"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
@@ -5815,7 +5818,7 @@
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.JQ8suKB" alias=".service_locator.Wbb3jTR"/>
     <service id=".service_locator.9fYvWHp" alias=".service_locator.UIbAps0"/>
-    <service id=".service_locator.neL22o2" alias=".service_locator.XUyvr4Q"/>
+    <service id=".service_locator.OuLQ8nG" alias=".service_locator.RRxxsY4"/>
     <service id=".service_locator.0TSyRyT" alias=".service_locator.kXtg5m1"/>
     <service id=".service_locator.n6pF__d" alias=".service_locator.oKYopqz"/>
     <service id=".service_locator.ntoj5o6" alias=".service_locator.ysmFcWQ"/>

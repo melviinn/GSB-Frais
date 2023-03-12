@@ -19,7 +19,7 @@ class ChoixValidationFicheFraisType extends AbstractType
             ->add('idVisiteur', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => function(User $user){
-                    return sprintf('(%d) %s', $user->getId(), $user->getPrenom());
+                    return sprintf('%s', $user->getPrenom());
                 },
                 'attr' => [
                     'class' => 'form-control',
