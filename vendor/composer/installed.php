@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3a201c4ebc014d8605531c862f2ec0ca6ea9d02d',
+        'reference' => '5aa45f10578f92dcf588bfb4530907c9e9898dc0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3a201c4ebc014d8605531c862f2ec0ca6ea9d02d',
+            'reference' => '5aa45f10578f92dcf588bfb4530907c9e9898dc0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -74,9 +74,9 @@
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-bundle' => array(
-            'pretty_version' => '2.8.3',
-            'version' => '2.8.3.0',
-            'reference' => 'fd67ba64db3c806f626a33dcab15a4db0c77652e',
+            'pretty_version' => '2.9.0',
+            'version' => '2.9.0.0',
+            'reference' => '9819c00c2eea750b99902f244309b824911b72b2',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../doctrine/doctrine-bundle',
             'aliases' => array(),
@@ -664,6 +664,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/translation' => array(
+            'pretty_version' => 'v6.1.11',
+            'version' => '6.1.11.0',
+            'reference' => 'e3d6773b18a5e32e80442cadc851bee8b1df72f4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/translation',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/translation-contracts' => array(
             'pretty_version' => 'v3.2.1',
             'version' => '3.2.1.0',
@@ -672,6 +681,12 @@
             'install_path' => __DIR__ . '/../symfony/translation-contracts',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'symfony/translation-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.3|3.0',
+            ),
         ),
         'symfony/twig-bridge' => array(
             'pretty_version' => 'v6.1.11',
@@ -710,9 +725,9 @@
             'dev_requirement' => false,
         ),
         'symfony/var-exporter' => array(
-            'pretty_version' => 'v6.2.7',
-            'version' => '6.2.7.0',
-            'reference' => '86062dd0103530e151588c8f60f5b85a139f1442',
+            'pretty_version' => 'v6.2.8',
+            'version' => '6.2.8.0',
+            'reference' => '8302bb670204500d492c6b8c595ee9a27da62cd6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-exporter',
             'aliases' => array(),

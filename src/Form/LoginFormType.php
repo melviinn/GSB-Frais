@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class LoginFormType extends AbstractType
 {
@@ -18,9 +19,14 @@ class LoginFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Login', 
+                'label' => 'Login',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez renseignez votre matricule'
+                    ])
                 ]
             ])
             ->add('password', PasswordType::class, [

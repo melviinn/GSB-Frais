@@ -81,16 +81,4 @@ class LigneFraisHorsForfait
 
         return $this;
     }
-
-    public function getMois(): ?string
-    {
-        return $this->mois;
-    }
-
-    public function setMois(?string $mois): self
-    {
-        $this->mois = $mois;
-
-        return $this;
-    }
 }

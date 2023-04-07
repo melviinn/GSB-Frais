@@ -15,7 +15,10 @@ use App\Repository\FraisForfaitRepository;
 use App\Repository\LigneFraisForfaitRepository;
 use App\Repository\LigneFraisHorsForfaitRepository;
 use App\Repository\UserRepository;
+use DateInterval;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use Stringable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -313,7 +316,19 @@ class FicheFraisController extends AbstractController
             // On récupère le FraisHorsForfait sélectionné et on ajoute "REFUSEE :" au début de son libellé
             $horsForfait = $ligneFraisHorsForfaitRepository->findOneBy(['idVisiteur' => $idVisiteur]);
             $horsForfait->setLibelle("REFUSEE : " . $horsForfait->getLibelle());
-            $em->persist($horsForfait);
+
+            // On génère un nouvel HorsForfait avec les mêmes données que précédemment en rajoutant 1 mois
+            $newHorsForfait = new LigneFraisHorsForfait();
+            $newHorsForfait->setIdVisiteur($horsForfait->getIdVisiteur());
+            $newHorsForfait->setLibelle($horsForfait->getLibelle());
+            $dateNewHorsForfait = strtotime($horsForfait->getDate());
+            $newHorsForfait->setDate(date("Y-m-d", strtotime("+ 1 month", $dateNewHorsForfait)));
+            $newHorsForfait->setMontant($horsForfait->getMontant());
+
+            // On supprime l'ancien HorsForfait et on créer le nouveau
+            $em->remove($horsForfait);
+            $em->flush();
+            $em->persist($newHorsForfait);
             $em->flush();
 
             // On redirige après validation afin d'éviter l'envoi du formulaire au reload de la page

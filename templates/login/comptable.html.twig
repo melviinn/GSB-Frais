@@ -5,12 +5,16 @@
         <title>{% block title %}Connexion{% endblock %}</title>
         <link rel="icon" href="{{ asset('Logo-gsb.png') }}">
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}" type="text/css">
             <link href="{{ asset('css/loginComptable.css') }}" type="text/css" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
         {% block body %}
             <div class="box">
+                {% if error %}
+                    <div class="error-msg"><i class="fas fa-warning"></i>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
                 <form method="post">
                     <div class="login-box">
                         <div class="form-login">

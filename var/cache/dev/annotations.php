@@ -66,6 +66,10 @@ return [[
 '[C]App%5CController%5CFicheFraisController%23renseigner' => 1,
 'App%5CController%5CFicheFraisController%23visualiser' => 0,
 '[C]App%5CController%5CFicheFraisController%23visualiser' => 1,
+'App%5CController%5CFicheFraisController%23choixValidation' => 0,
+'[C]App%5CController%5CFicheFraisController%23choixValidation' => 1,
+'App%5CController%5CFicheFraisController%23valider' => 0,
+'[C]App%5CController%5CFicheFraisController%23valider' => 1,
 'App%5CController%5CLoginController' => 0,
 '[C]App%5CController%5CLoginController' => 1,
 'App%5CController%5CLoginController%23visiteur' => 0,
@@ -74,12 +78,6 @@ return [[
 '[C]App%5CController%5CLoginController%23comptable' => 1,
 'App%5CController%5CLoginController%23logout' => 0,
 '[C]App%5CController%5CLoginController%23logout' => 1,
-'App%5CController%5CRegistrationController' => 0,
-'[C]App%5CController%5CRegistrationController' => 1,
-'App%5CController%5CRegistrationController%23register' => 0,
-'[C]App%5CController%5CRegistrationController%23register' => 1,
-'App%5CController%5CRegistrationController%23registerComptable' => 0,
-'[C]App%5CController%5CRegistrationController%23registerComptable' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
 'App%5CController%5CSecurityController%23login' => 0,
@@ -272,10 +270,6 @@ return [[
 '[C]App%5CEntity%5CLigneFraisHorsForfait%23getIdVisiteur' => 1,
 'App%5CEntity%5CLigneFraisHorsForfait%23setIdVisiteur' => 0,
 '[C]App%5CEntity%5CLigneFraisHorsForfait%23setIdVisiteur' => 1,
-'App%5CEntity%5CLigneFraisHorsForfait%23getMois' => 0,
-'[C]App%5CEntity%5CLigneFraisHorsForfait%23getMois' => 1,
-'App%5CEntity%5CLigneFraisHorsForfait%23setMois' => 0,
-'[C]App%5CEntity%5CLigneFraisHorsForfait%23setMois' => 1,
 'App%5CEntity%5CLigneFraisHorsForfait%24id' => 0,
 '[C]App%5CEntity%5CLigneFraisHorsForfait%24id' => 1,
 'App%5CEntity%5CLigneFraisHorsForfait%24libelle' => 0,
@@ -972,6 +966,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1678461055,
+1 => 1680869543,
 
 ]];

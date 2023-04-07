@@ -16,8 +16,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
-    'app_register_comptable' => [[], ['_controller' => 'App\\Controller\\RegistrationController::registerComptable'], [], [['text', '/register/comptable']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_login_comptable' => [[], ['_controller' => 'App\\Controller\\SecurityController::loginComptable'], [], [['text', '/loginComptable']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\AccueilController::accueilVisiteur'], [], [['text', '/home']], [], [], []],
